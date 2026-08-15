@@ -1,0 +1,78 @@
+GSIS INSTITUTIONAL — DEPENDENCY AUDIT
+Generated: 2026-08-15
+
+PURPOSE
+-------
+This file records the current dependency/import state of GSIS.
+It is an audit artifact. Missing modules are NOT to be fabricated or
+removed during this preservation phase.
+
+PYTHON ENVIRONMENT
+------------------
+Python: 3.13.13
+pip: 26.1.2
+
+KNOWN EXTERNAL PACKAGES PRESENT
+--------------------------------
+numpy
+pandas
+requests
+python-dotenv
+python-binance
+websocket-client
+websockets
+aiohttp
+dateparser
+pycryptodome
+pytz
+python-dateutil
+
+KNOWN EXTERNAL PACKAGE MISSING
+------------------------------
+MetaTrader5
+
+IMPORTANT
+---------
+MetaTrader5 Python package is unavailable in the current Termux/Android
+environment. MT5 connectivity therefore requires the existing remote
+bridge architecture or another compatible host.
+
+GSIS INTERNAL MODULES REPORTED MISSING
+---------------------------------------
+auto_learning_loop
+broker_execution_gate
+configuration_control_engine
+decision_governor_engine
+execution_control_engine
+gsis_confidence_calibration_engine
+gsis_intelligence_fusion_engine
+gsis_master_intelligence_adapter
+gsis_pattern_probability_engine
+historical_replay_engine
+intelligence_bridge
+pipeline_telemetry_engine
+portfolio_risk_governor_engine
+recovery_control_engine
+risk_position_engine
+signal_memory_engine
+system_health_monitor_engine
+trade_audit_engine
+trade_lifecycle_engine
+trade_management_engine
+trade_monitor_engine
+
+PRESERVATION POLICY
+-------------------
+Do not delete apparently broken imports.
+Do not fabricate replacement modules.
+Do not install random packages to satisfy GSIS internal imports.
+First preserve the complete repository and audit Git history.
+
+NEXT PHASE
+----------
+1. Audit repository contents.
+2. Audit Git history.
+3. Recover missing GSIS modules if they existed previously.
+4. Identify genuinely required external packages.
+5. Build reproducible dependency manifests.
+6. Separate Termux-compatible components from MT4/MT5 host components.
