@@ -1,0 +1,14 @@
+{
+    "symbol": "BTCUSDT",
+    "price": 64252.11,
+    "structure": "RANGE",
+    "trend": "UNKNOWN",
+    "BOS": false,
+    "CHOCH": false,
+    "confidence": 0.0,
+    "swing": {
+        "type": "SWING_HIGH",
+        "price": 64260.13
+    },
+    "timestamp": 1784233892.3186545
+}

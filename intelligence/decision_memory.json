@@ -1,0 +1,12 @@
+[
+    {
+        "decision": "EXECUTION APPROVED",
+        "score": 90,
+        "reasons": [
+            "INTELLIGENCE APPROVED",
+            "RISK APPROVED",
+            "CAPITAL APPROVED"
+        ],
+        "timestamp": "2026-07-29T10:05:34.342292+00:00"
+    }
+]

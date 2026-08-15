@@ -1,0 +1,16 @@
+{
+    "symbol": "BTCUSDT",
+    "engine": "GSIS_INSTITUTIONAL_FUSION_v9.1",
+    "institutional_state": "NEUTRAL_RANGE",
+    "fusion_score": -20,
+    "bull_probability": 30,
+    "bear_probability": 70,
+    "execution_permission": "NO_TRADE",
+    "hmm_regime": "MARKDOWN",
+    "components": {
+        "structure_score": 0,
+        "liquidity_score": 0,
+        "orderflow_score": 5
+    },
+    "timestamp": 1784198634.9277642
+}

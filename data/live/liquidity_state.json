@@ -1,0 +1,12 @@
+{
+    "symbol": "BTCUSDT",
+    "price": 64100.0,
+    "liquidity_state": "DUAL_LIQUIDITY_RANGE",
+    "liquidity_bias": "NEUTRAL",
+    "swing_high": 64997.52,
+    "swing_low": 63888.0,
+    "high_clusters": 6,
+    "low_clusters": 7,
+    "strength": 1,
+    "timestamp": 1784195103.4234908
+}

@@ -1,0 +1,31 @@
+{
+    "system_name": "GSIS Institutional",
+    "version": "1.0",
+    "mode": "development",
+
+    "symbols": [
+        "BTCUSDT"
+    ],
+
+    "timeframes": [
+        "M1",
+        "M5",
+        "M15",
+        "M30",
+        "H1",
+        "H4",
+        "D1"
+    ],
+
+    "database": "database/qmos.db",
+
+    "risk_per_trade": 0.005,
+
+    "enable_ai": false,
+
+    "enable_backtesting": false,
+
+    "enable_news_engine": false,
+
+    "enable_execution": false
+}

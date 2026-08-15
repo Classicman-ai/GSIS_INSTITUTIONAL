@@ -1,0 +1,11 @@
+[
+    {
+        "trade_id": "TEST-001",
+        "symbol": "XAUUSD",
+        "direction": "SELL",
+        "pattern": "LIQUIDITY_SWEEP_BEARISH",
+        "result": "OPEN",
+        "profit_loss": 0,
+        "timestamp": "2026-07-29T09:40:55.101107+00:00"
+    }
+]

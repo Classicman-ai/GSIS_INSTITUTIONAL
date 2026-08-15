@@ -1,0 +1,9 @@
+{
+    "risk_status": "BLOCKED",
+    "reason": "MAX_OPEN_TRADES_REACHED",
+    "max_risk_percent": 0.5,
+    "open_trades": 1,
+    "current_equity": 102740.0,
+    "drawdown_percent": -2.74,
+    "timestamp": "2026-07-19T13:04:34.218472+00:00"
+}

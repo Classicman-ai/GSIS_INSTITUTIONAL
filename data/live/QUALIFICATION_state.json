@@ -1,0 +1,19 @@
+{
+    "engine": "GSIS_QUALIFICATION_ENGINE_v2.0",
+    "status": "ACTIVE",
+    "heartbeat": 1784403481.9573455,
+    "timestamp": "2026-07-18T19:38:01.957361+00:00",
+    "state": {
+        "symbol": "BTCUSDT",
+        "qualification": "B_SETUP",
+        "qualification_score": 60,
+        "direction": "SHORT",
+        "regime_bias": "BEARISH",
+        "regime_score": 60,
+        "confirmation_score": 0,
+        "conditions": [
+            "BEARISH_REGIME_CONFIRMED",
+            "BAYESIAN_CONFIDENCE"
+        ]
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "engine": "ORDERFLOW",
+    "status": "ACTIVE",
+    "heartbeat": 1784275318.418429,
+    "timestamp": "2026-07-17T08:01:58.418442+00:00",
+    "state": {
+        "symbol": "BTCUSDT",
+        "buy_pressure": 0.0,
+        "sell_pressure": 0.0,
+        "delta": 0.0,
+        "imbalance": "NEUTRAL",
+        "status": "ACTIVE"
+    }
+}

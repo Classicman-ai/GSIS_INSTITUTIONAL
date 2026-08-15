@@ -1,0 +1,16 @@
+{
+    "engine": "GSIS_EXECUTION_ENGINE_v3.0",
+    "status": "ACTIVE",
+    "heartbeat": 1784403483.615083,
+    "timestamp": "2026-07-18T19:38:03.615098+00:00",
+    "state": {
+        "symbol": "BTCUSDT",
+        "execution_status": "BLOCKED",
+        "order_instruction": "NO_ORDER",
+        "risk_status": "BLOCKED",
+        "direction": "SHORT",
+        "entry": null,
+        "stop_loss": null,
+        "take_profit": null
+    }
+}

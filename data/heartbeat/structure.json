@@ -1,0 +1,15 @@
+{
+    "engine": "STRUCTURE",
+    "status": "ACTIVE",
+    "heartbeat": 1784272925.3768606,
+    "timestamp": "2026-07-17T07:22:05.376868+00:00",
+    "state": {
+        "symbol": "BTCUSDT",
+        "market_structure": "UNKNOWN",
+        "bos": false,
+        "choch": false,
+        "trend": "NEUTRAL",
+        "liquidity_state": "UNKNOWN",
+        "status": "ACTIVE"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "engine": "GSIS_REGIME_SCORE_ENGINE_v1.1",
+    "status": "ACTIVE",
+    "heartbeat": 1784403478.4351199,
+    "timestamp": "2026-07-18T19:37:58.435134+00:00",
+    "state": {
+        "score": 60,
+        "bias": "BEARISH",
+        "evidence": [
+            "HMM_BEARISH_REGIME",
+            "FUSION_BEARISH_REGIME",
+            "BAYESIAN_BEARISH"
+        ]
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "trade_id": "GSIS-20260719-130130",
+    "symbol": "BTCUSDT",
+    "direction": "BUY",
+    "confidence": 94.6,
+    "setup": "A+",
+    "timeframe": "M15",
+    "status": "ACTIVE",
+    "opened_at": "2026-07-19T13:01:30.877502+00:00"
+}

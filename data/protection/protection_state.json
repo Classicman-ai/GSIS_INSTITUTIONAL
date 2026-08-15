@@ -1,0 +1,9 @@
+{
+    "protection": "ACTIVE",
+    "new_entries": "BLOCKED",
+    "reason": "ACTIVE_TRADE_EXISTS",
+    "active_trade": "GSIS-20260719-125222",
+    "symbol": "BTCUSDT",
+    "direction": "BUY",
+    "timestamp": "2026-07-19T13:00:26.264966+00:00"
+}

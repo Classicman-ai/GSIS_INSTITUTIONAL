@@ -1,0 +1,9 @@
+{
+    "engine": "TEST",
+    "status": "ACTIVE",
+    "heartbeat": 1784270801.824698,
+    "timestamp": "2026-07-17T06:46:41.824719+00:00",
+    "state": {
+        "message": "heartbeat operational"
+    }
+}

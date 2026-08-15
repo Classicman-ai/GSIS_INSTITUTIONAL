@@ -1,0 +1,29 @@
+{
+    "certificate_engine": "GSIS_TRADE_CERTIFICATE_ENGINE_v2.0",
+    "trade_id": "GSIS-20260719-115301",
+    "symbol": "BTCUSDT",
+    "direction": "BUY",
+    "trade_status": "COMPLETED",
+    "event_verification": {
+        "TP1_HIT": "VERIFIED",
+        "TP2_HIT": "VERIFIED",
+        "TP3_HIT": "VERIFIED",
+        "TP4_HIT": "VERIFIED",
+        "STOP_MOVED_BREAK_EVEN": "VERIFIED",
+        "TRADE_COMPLETED": "VERIFIED"
+    },
+    "telegram_delivery": {
+        "messages_confirmed": 6,
+        "delivered_events": [
+            "TP1_HIT",
+            "TP2_HIT",
+            "TP3_HIT",
+            "TP4_HIT",
+            "STOP_MOVED_BREAK_EVEN",
+            "TRADE_COMPLETED"
+        ],
+        "verification": "PASSED"
+    },
+    "final_verdict": "SUCCESSFUL",
+    "generated": "2026-07-20T10:55:46.516218+00:00"
+}

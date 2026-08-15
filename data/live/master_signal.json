@@ -1,0 +1,21 @@
+{
+    "engine": "GSIS_MASTER_SIGNAL_ENGINE_v3.0",
+    "status": "ACTIVE",
+    "heartbeat": 1784403478.4392462,
+    "timestamp": "2026-07-18T19:37:58.439262+00:00",
+    "state": {
+        "symbol": "BTCUSDT",
+        "signal": "WAIT",
+        "direction": "NONE",
+        "confidence": 80,
+        "institutional_score": 60,
+        "bias": "BEARISH",
+        "risk_status": "BLOCKED",
+        "confirmation": false,
+        "reasons": [
+            "BEARISH_REGIME_SCORE",
+            "NO_CONFIRMATION",
+            "RISK_BLOCKED"
+        ]
+    }
+}

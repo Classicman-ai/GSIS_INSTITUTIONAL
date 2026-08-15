@@ -1,0 +1,14 @@
+{
+    "engine": "GSIS_ALERT_ENGINE_v1.0",
+    "status": "ACTIVE",
+    "heartbeat": 1784278595.8392174,
+    "timestamp": "2026-07-17T08:56:35.839225+00:00",
+    "state": {
+        "symbol": "BTCUSDT",
+        "alerts": [
+            "TRADE BLOCKED BY RISK ENGINE",
+            "EXECUTION LOCKED"
+        ],
+        "severity": "NORMAL"
+    }
+}

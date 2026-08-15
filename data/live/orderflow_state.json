@@ -1,0 +1,43 @@
+{
+    "symbol": "BTCUSDT",
+    "engine": "ORDER_FLOW_V2.0",
+    "timeframes": {
+        "1M": {
+            "state": "BALANCED",
+            "buy_volume": 3.7447,
+            "sell_volume": 3.4262,
+            "delta": 0.0444,
+            "absorption": false,
+            "displacement": false,
+            "body_strength": 0.729,
+            "bullish_candles": 5,
+            "bearish_candles": 5,
+            "confidence": 4
+        },
+        "5M": {
+            "state": "BUYER_CONTROL",
+            "buy_volume": 1405.5563,
+            "sell_volume": 521.288,
+            "delta": 0.4589,
+            "absorption": true,
+            "displacement": false,
+            "body_strength": 0.402,
+            "bullish_candles": 7,
+            "bearish_candles": 3,
+            "confidence": 45
+        },
+        "15M": {
+            "state": "SELLER_CONTROL",
+            "buy_volume": 1297.0269,
+            "sell_volume": 3088.3392,
+            "delta": -0.4085,
+            "absorption": true,
+            "displacement": false,
+            "body_strength": 0.771,
+            "bullish_candles": 4,
+            "bearish_candles": 6,
+            "confidence": 40
+        }
+    },
+    "timestamp": 1784198372.7059734
+}

@@ -1,0 +1,11 @@
+{
+    "signal": "WAIT",
+    "direction": "NO_EXECUTION",
+    "execution_status": "BLOCKED",
+    "quality_score": 70,
+    "fusion_score": -20,
+    "regime": "MARKDOWN",
+    "symbol": "BTCUSDT",
+    "engine": "GSIS_EXECUTION_ENGINE_v1.0",
+    "timestamp": 1784216935.0545654
+}

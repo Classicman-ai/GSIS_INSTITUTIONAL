@@ -1,0 +1,14 @@
+{
+    "trade_id": "GSIS-20260719-115301",
+    "symbol": "BTCUSDT",
+    "direction": "BUY",
+    "status": "COMPLETED",
+    "tp1": "HIT",
+    "tp2": "HIT",
+    "tp3": "HIT",
+    "tp4": "HIT",
+    "stop_loss": "BREAK_EVEN",
+    "break_even": true,
+    "last_update": "2026-07-20T11:05:04.168614+00:00",
+    "last_price": 64347.99
+}

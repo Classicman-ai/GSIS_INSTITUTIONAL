@@ -1,0 +1,48 @@
+{
+    "engine": "GSIS_PATTERN_MEMORY_ENGINE_v1.0",
+    "status": "ACTIVE",
+    "heartbeat": 1784276302.3684525,
+    "timestamp": "2026-07-17T08:18:22.368467+00:00",
+    "memory": {
+        "total_samples": 2,
+        "correct_predictions": 0,
+        "wrong_predictions": 0,
+        "historical_accuracy": 0.0,
+        "learning_state": "COLLECTING_DATA",
+        "confidence_history": {
+            "high_confidence": {
+                "samples": 0,
+                "wins": 0,
+                "accuracy": 0
+            },
+            "medium_confidence": {
+                "samples": 0,
+                "wins": 0,
+                "accuracy": 0
+            },
+            "low_confidence": {
+                "samples": 0,
+                "wins": 0,
+                "accuracy": 0
+            }
+        },
+        "bayesian_link": {
+            "market": {
+                "regime": "MARKDOWN",
+                "confidence": 52.4
+            },
+            "prediction": {
+                "direction": "NONE",
+                "signal": "WAIT",
+                "confidence": 68.97
+            },
+            "bayesian_learning": {
+                "samples": 2,
+                "accuracy": 0.0,
+                "confidence_adjustment": 0,
+                "learning_state": "INSUFFICIENT_HISTORY"
+            },
+            "adjusted_confidence": 68.97
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "symbol": "BTCUSDT",
+    "price": 64506.1,
+    "window_trades": 100,
+    "buy_volume": 0.0,
+    "sell_volume": 0.151,
+    "delta": -0.151,
+    "imbalance": -1.0,
+    "flow": "STRONG_SELL_PRESSURE",
+    "timestamp": 1784233891.115746
+}

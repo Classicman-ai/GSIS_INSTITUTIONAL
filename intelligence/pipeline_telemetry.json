@@ -1,0 +1,11 @@
+[
+    {
+        "stage": "SYSTEM_START",
+        "status": "SUCCESS",
+        "data": {
+            "module": "TELEMETRY",
+            "mode": "SIMULATION"
+        },
+        "timestamp": "2026-07-29T10:20:20.450554+00:00"
+    }
+]

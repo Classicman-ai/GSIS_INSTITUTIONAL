@@ -1,0 +1,37 @@
+[
+    {
+        "trade_id": "GSIS-NEW-SESSION-TEST",
+        "event": "TRADE_OPENED",
+        "timestamp": "2026-07-20T11:24:45.123451+00:00"
+    },
+    {
+        "trade_id": "GSIS-NEW-SESSION-TEST",
+        "event": "TP1_HIT",
+        "timestamp": "2026-07-20T11:24:45.929671+00:00"
+    },
+    {
+        "trade_id": "GSIS-NEW-SESSION-TEST",
+        "event": "TP2_HIT",
+        "timestamp": "2026-07-20T11:24:46.551934+00:00"
+    },
+    {
+        "trade_id": "GSIS-NEW-SESSION-TEST",
+        "event": "TP3_HIT",
+        "timestamp": "2026-07-20T11:24:47.175703+00:00"
+    },
+    {
+        "trade_id": "GSIS-NEW-SESSION-TEST",
+        "event": "TP4_HIT",
+        "timestamp": "2026-07-20T11:24:47.824259+00:00"
+    },
+    {
+        "trade_id": "GSIS-NEW-SESSION-TEST",
+        "event": "STOP_MOVED_BREAK_EVEN",
+        "timestamp": "2026-07-20T11:24:48.434569+00:00"
+    },
+    {
+        "trade_id": "GSIS-NEW-SESSION-TEST",
+        "event": "TRADE_COMPLETED",
+        "timestamp": "2026-07-20T11:24:49.068746+00:00"
+    }
+]

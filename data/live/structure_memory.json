@@ -1,0 +1,13 @@
+{
+    "symbol": "BTCUSDT",
+    "price": 64252.11,
+    "internal_structure": "BULLISH",
+    "external_structure": "COLLECTING",
+    "trend": "UNKNOWN",
+    "BOS": false,
+    "CHOCH": false,
+    "last_high": 64260.13,
+    "last_low": null,
+    "confidence": 0,
+    "timestamp": 1784190220.0455277
+}

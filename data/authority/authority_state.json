@@ -1,0 +1,12 @@
+{
+    "symbol": "BTCUSDT",
+    "direction": "BUY",
+    "confidence": 94.6,
+    "setup": "A+",
+    "timeframe": "M15",
+    "regime": "BULLISH",
+    "bayesian": "BUY",
+    "confirmation": true,
+    "risk_status": "APPROVED",
+    "timestamp": "2026-07-21T21:39:59.382251+00:00"
+}

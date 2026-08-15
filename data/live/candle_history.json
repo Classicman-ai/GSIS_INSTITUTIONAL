@@ -1,0 +1,211 @@
+[
+    {
+        "symbol": "BTCUSDT",
+        "timeframe": "1M",
+        "open": 64195.87,
+        "high": 64195.87,
+        "low": 64165.14,
+        "close": 64166.11,
+        "volume": 0.80672,
+        "analysis": {
+            "direction": "BEARISH",
+            "body": -29.76,
+            "range": 30.73,
+            "upper_wick": 0.0,
+            "lower_wick": 0.97,
+            "strength": 0.968,
+            "type": "DISPLACEMENT"
+        },
+        "timestamp": 1784188380.5184958
+    },
+    {
+        "symbol": "BTCUSDT",
+        "timeframe": "1M",
+        "open": 64166.1,
+        "high": 64166.11,
+        "low": 64086.12,
+        "close": 64111.62,
+        "volume": 0.67835,
+        "analysis": {
+            "direction": "BEARISH",
+            "body": -54.48,
+            "range": 79.99,
+            "upper_wick": 0.01,
+            "lower_wick": 25.5,
+            "strength": 0.681,
+            "type": "NORMAL"
+        },
+        "timestamp": 1784188440.6063101
+    },
+    {
+        "symbol": "BTCUSDT",
+        "timeframe": "1M",
+        "open": 64111.63,
+        "high": 64143.62,
+        "low": 64111.63,
+        "close": 64114.01,
+        "volume": 0.67465,
+        "analysis": {
+            "direction": "BULLISH",
+            "body": 2.38,
+            "range": 31.99,
+            "upper_wick": 29.61,
+            "lower_wick": 0.0,
+            "strength": 0.074,
+            "type": "NORMAL"
+        },
+        "timestamp": 1784188500.6810708
+    },
+    {
+        "symbol": "BTCUSDT",
+        "timeframe": "1M",
+        "open": 64117.99,
+        "high": 64130.96,
+        "low": 64117.99,
+        "close": 64130.96,
+        "volume": 0.64544,
+        "analysis": {
+            "direction": "BULLISH",
+            "body": 12.97,
+            "range": 12.97,
+            "upper_wick": 0.0,
+            "lower_wick": 0.0,
+            "strength": 1.0,
+            "type": "DISPLACEMENT"
+        },
+        "timestamp": 1784188560.743241
+    },
+    {
+        "symbol": "BTCUSDT",
+        "timeframe": "1M",
+        "open": 64130.96,
+        "high": 64180.0,
+        "low": 64130.95,
+        "close": 64179.99,
+        "volume": 1.67993,
+        "analysis": {
+            "direction": "BULLISH",
+            "body": 49.03,
+            "range": 49.05,
+            "upper_wick": 0.01,
+            "lower_wick": 0.01,
+            "strength": 1.0,
+            "type": "DISPLACEMENT"
+        },
+        "timestamp": 1784188620.8030782
+    },
+    {
+        "symbol": "BTCUSDT",
+        "timeframe": "1M",
+        "open": 64180.0,
+        "high": 64204.0,
+        "low": 64179.99,
+        "close": 64204.0,
+        "volume": 0.81579,
+        "analysis": {
+            "direction": "BULLISH",
+            "body": 24.0,
+            "range": 24.01,
+            "upper_wick": 0.0,
+            "lower_wick": 0.01,
+            "strength": 1.0,
+            "type": "DISPLACEMENT"
+        },
+        "timestamp": 1784188681.875453
+    },
+    {
+        "symbol": "BTCUSDT",
+        "timeframe": "1M",
+        "open": 64206.0,
+        "high": 64241.76,
+        "low": 64206.0,
+        "close": 64241.76,
+        "volume": 1.04807,
+        "analysis": {
+            "direction": "BULLISH",
+            "body": 35.76,
+            "range": 35.76,
+            "upper_wick": 0.0,
+            "lower_wick": 0.0,
+            "strength": 1.0,
+            "type": "DISPLACEMENT"
+        },
+        "timestamp": 1784188741.964056
+    },
+    {
+        "symbol": "BTCUSDT",
+        "timeframe": "1M",
+        "open": 64241.75,
+        "high": 64250.55,
+        "low": 64234.0,
+        "close": 64234.01,
+        "volume": 1.99139,
+        "analysis": {
+            "direction": "BEARISH",
+            "body": -7.74,
+            "range": 16.55,
+            "upper_wick": 8.8,
+            "lower_wick": 0.01,
+            "strength": 0.468,
+            "type": "NORMAL"
+        },
+        "timestamp": 1784188802.0302896
+    },
+    {
+        "symbol": "BTCUSDT",
+        "timeframe": "1M",
+        "open": 64234.01,
+        "high": 64260.13,
+        "low": 64217.61,
+        "close": 64246.01,
+        "volume": 0.92383,
+        "analysis": {
+            "direction": "BULLISH",
+            "body": 12.0,
+            "range": 42.52,
+            "upper_wick": 14.12,
+            "lower_wick": 16.4,
+            "strength": 0.282,
+            "type": "NORMAL"
+        },
+        "timestamp": 1784188862.0913668
+    },
+    {
+        "symbol": "BTCUSDT",
+        "timeframe": "1M",
+        "open": 64246.01,
+        "high": 64254.0,
+        "low": 64233.13,
+        "close": 64238.3,
+        "volume": 0.34145,
+        "analysis": {
+            "direction": "BEARISH",
+            "body": -7.71,
+            "range": 20.87,
+            "upper_wick": 7.99,
+            "lower_wick": 5.17,
+            "strength": 0.369,
+            "type": "NORMAL"
+        },
+        "timestamp": 1784188922.1569371
+    },
+    {
+        "symbol": "BTCUSDT",
+        "timeframe": "1M",
+        "open": 64238.3,
+        "high": 64257.26,
+        "low": 64234.0,
+        "close": 64252.11,
+        "volume": 0.2258,
+        "analysis": {
+            "direction": "BULLISH",
+            "body": 13.81,
+            "range": 23.26,
+            "upper_wick": 5.15,
+            "lower_wick": 4.3,
+            "strength": 0.594,
+            "type": "NORMAL"
+        },
+        "timestamp": 1784188982.2345881
+    }
+]

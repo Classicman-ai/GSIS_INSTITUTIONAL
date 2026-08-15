@@ -1,0 +1,44 @@
+[
+    {
+        "trade_id": "GSIS-20260719-115301",
+        "symbol": "BTCUSDT",
+        "event": "TP1_HIT",
+        "value": "PROFIT_SECURED",
+        "timestamp": "2026-07-19T12:22:09.571498+00:00"
+    },
+    {
+        "trade_id": "GSIS-20260719-115301",
+        "symbol": "BTCUSDT",
+        "event": "TP2_HIT",
+        "value": "TARGET_REACHED",
+        "timestamp": "2026-07-19T12:22:09.572186+00:00"
+    },
+    {
+        "trade_id": "GSIS-20260719-115301",
+        "symbol": "BTCUSDT",
+        "event": "TP3_HIT",
+        "value": "TARGET_REACHED",
+        "timestamp": "2026-07-19T12:22:09.572702+00:00"
+    },
+    {
+        "trade_id": "GSIS-20260719-115301",
+        "symbol": "BTCUSDT",
+        "event": "TP4_HIT",
+        "value": "TRADE_COMPLETED",
+        "timestamp": "2026-07-19T12:52:22.685741+00:00"
+    },
+    {
+        "trade_id": "GSIS-20260719-115301",
+        "symbol": "BTCUSDT",
+        "event": "STOP_MOVED_BREAK_EVEN",
+        "value": "STOP_PROTECTED",
+        "timestamp": "2026-07-20T09:48:32.441138+00:00"
+    },
+    {
+        "trade_id": "GSIS-20260719-115301",
+        "symbol": "BTCUSDT",
+        "event": "TRADE_COMPLETED",
+        "value": "SUCCESS",
+        "timestamp": "2026-07-20T09:48:32.444076+00:00"
+    }
+]

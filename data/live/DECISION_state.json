@@ -1,0 +1,14 @@
+{
+    "engine": "DECISION",
+    "status": "ACTIVE",
+    "heartbeat": 1784371435.9757648,
+    "timestamp": "2026-07-18T10:43:55.975774+00:00",
+    "state": {
+        "symbol": "BTCUSDT",
+        "decision": "WAIT",
+        "permission": "BLOCKED",
+        "bias": "NEUTRAL",
+        "score": -30,
+        "confidence": 30
+    }
+}

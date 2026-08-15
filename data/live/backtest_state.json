@@ -1,0 +1,15 @@
+{
+    "engine": "GSIS_BACKTEST_ENGINE_v1.0",
+    "status": "ACTIVE",
+    "heartbeat": 1784278880.1665132,
+    "timestamp": "2026-07-17T09:01:20.166525+00:00",
+    "state": {
+        "symbol": "BTCUSDT",
+        "mode": "HISTORICAL_SIMULATION",
+        "trades_tested": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": 0,
+        "performance": "INSUFFICIENT_DATA"
+    }
+}

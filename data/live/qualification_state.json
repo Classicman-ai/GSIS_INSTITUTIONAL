@@ -1,0 +1,14 @@
+{
+    "engine": "GSIS_TRADE_QUALIFICATION_v1.0",
+    "symbol": "BTCUSDT",
+    "qualification": "NO_TRADE",
+    "direction": "NONE",
+    "score": -50,
+    "confidence": 50,
+    "evidence": [
+        "BEARISH_REGIME",
+        "15M_SELLER_CONTROL",
+        "5M_BUYER_PRESSURE"
+    ],
+    "timestamp": 1784219625.625559
+}

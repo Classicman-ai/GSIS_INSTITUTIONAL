@@ -1,0 +1,12 @@
+{
+    "engine": "GSIS_CONFIRMATION_ENGINE_v2.1",
+    "status": "ACTIVE",
+    "heartbeat": 1784403481.1279974,
+    "timestamp": "2026-07-18T19:38:01.128014+00:00",
+    "state": {
+        "confirmed": false,
+        "confirmation_score": 0,
+        "trend": "NEUTRAL",
+        "signals": []
+    }
+}

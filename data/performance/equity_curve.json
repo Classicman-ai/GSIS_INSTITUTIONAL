@@ -1,0 +1,1742 @@
+[
+    {
+        "date": "2026-07-19T12:39:04.811148+00:00",
+        "equity": 100000,
+        "return_percent": 0,
+        "cumulative_return": 0
+    },
+    {
+        "date": "2026-07-19T12:40:00.986939+00:00",
+        "equity": 100000,
+        "return_percent": 0,
+        "cumulative_return": 0.0
+    },
+    {
+        "date": "2026-07-19T12:43:39.122849+00:00",
+        "trade_id": "GSIS-20260719-115301",
+        "equity": 100685.0,
+        "profit": 685.0,
+        "return_percent": 0.685,
+        "cumulative_return": 0.685
+    },
+    {
+        "date": "2026-07-19T12:50:23.687042+00:00",
+        "trade_id": "GSIS-20260719-125023",
+        "equity": 101370.0,
+        "profit": 685.0,
+        "return_percent": 0.68,
+        "cumulative_return": 1.37
+    },
+    {
+        "date": "2026-07-19T12:52:22.977250+00:00",
+        "trade_id": "GSIS-20260719-125222",
+        "equity": 102055.0,
+        "profit": 685.0,
+        "return_percent": 0.676,
+        "cumulative_return": 2.055
+    },
+    {
+        "date": "2026-07-19T13:01:31.370078+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 102740.0,
+        "profit": 685.0,
+        "return_percent": 0.671,
+        "cumulative_return": 2.74
+    },
+    {
+        "date": "2026-07-19T13:12:35.209691+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 103425.0,
+        "profit": 685.0,
+        "return_percent": 0.667,
+        "cumulative_return": 3.425
+    },
+    {
+        "date": "2026-07-19T13:21:07.296953+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 104110.0,
+        "profit": 685.0,
+        "return_percent": 0.662,
+        "cumulative_return": 4.11
+    },
+    {
+        "date": "2026-07-19T13:25:18.519221+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 104795.0,
+        "profit": 685.0,
+        "return_percent": 0.658,
+        "cumulative_return": 4.795
+    },
+    {
+        "date": "2026-07-19T13:26:21.287430+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 105480.0,
+        "profit": 685.0,
+        "return_percent": 0.654,
+        "cumulative_return": 5.48
+    },
+    {
+        "date": "2026-07-19T13:27:24.778975+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 106165.0,
+        "profit": 685.0,
+        "return_percent": 0.649,
+        "cumulative_return": 6.165
+    },
+    {
+        "date": "2026-07-19T13:28:27.686677+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 106850.0,
+        "profit": 685.0,
+        "return_percent": 0.645,
+        "cumulative_return": 6.85
+    },
+    {
+        "date": "2026-07-19T13:29:30.658623+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 107535.0,
+        "profit": 685.0,
+        "return_percent": 0.641,
+        "cumulative_return": 7.535
+    },
+    {
+        "date": "2026-07-19T13:30:33.458000+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 108220.0,
+        "profit": 685.0,
+        "return_percent": 0.637,
+        "cumulative_return": 8.22
+    },
+    {
+        "date": "2026-07-19T13:31:36.989431+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 108905.0,
+        "profit": 685.0,
+        "return_percent": 0.633,
+        "cumulative_return": 8.905
+    },
+    {
+        "date": "2026-07-19T13:32:40.012503+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 109590.0,
+        "profit": 685.0,
+        "return_percent": 0.629,
+        "cumulative_return": 9.59
+    },
+    {
+        "date": "2026-07-19T13:33:42.883842+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 110275.0,
+        "profit": 685.0,
+        "return_percent": 0.625,
+        "cumulative_return": 10.275
+    },
+    {
+        "date": "2026-07-19T13:34:45.743667+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 110960.0,
+        "profit": 685.0,
+        "return_percent": 0.621,
+        "cumulative_return": 10.96
+    },
+    {
+        "date": "2026-07-19T13:35:49.280760+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 111645.0,
+        "profit": 685.0,
+        "return_percent": 0.617,
+        "cumulative_return": 11.645
+    },
+    {
+        "date": "2026-07-19T13:36:55.647424+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 112330.0,
+        "profit": 685.0,
+        "return_percent": 0.614,
+        "cumulative_return": 12.33
+    },
+    {
+        "date": "2026-07-19T13:37:59.709795+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 113015.0,
+        "profit": 685.0,
+        "return_percent": 0.61,
+        "cumulative_return": 13.015
+    },
+    {
+        "date": "2026-07-19T13:39:02.846899+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 113700.0,
+        "profit": 685.0,
+        "return_percent": 0.606,
+        "cumulative_return": 13.7
+    },
+    {
+        "date": "2026-07-19T13:40:05.754824+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 114385.0,
+        "profit": 685.0,
+        "return_percent": 0.602,
+        "cumulative_return": 14.385
+    },
+    {
+        "date": "2026-07-19T13:40:53.288336+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 115070.0,
+        "profit": 685.0,
+        "return_percent": 0.599,
+        "cumulative_return": 15.07
+    },
+    {
+        "date": "2026-07-19T13:40:58.644267+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 115755.0,
+        "profit": 685.0,
+        "return_percent": 0.595,
+        "cumulative_return": 15.755
+    },
+    {
+        "date": "2026-07-19T13:41:08.627661+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 116440.0,
+        "profit": 685.0,
+        "return_percent": 0.592,
+        "cumulative_return": 16.44
+    },
+    {
+        "date": "2026-07-19T13:42:01.481902+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 117125.0,
+        "profit": 685.0,
+        "return_percent": 0.588,
+        "cumulative_return": 17.125
+    },
+    {
+        "date": "2026-07-19T13:42:03.829790+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 117810.0,
+        "profit": 685.0,
+        "return_percent": 0.585,
+        "cumulative_return": 17.81
+    },
+    {
+        "date": "2026-07-19T13:42:08.491337+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 118495.0,
+        "profit": 685.0,
+        "return_percent": 0.581,
+        "cumulative_return": 18.495
+    },
+    {
+        "date": "2026-07-19T13:42:11.686104+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 119180.0,
+        "profit": 685.0,
+        "return_percent": 0.578,
+        "cumulative_return": 19.18
+    },
+    {
+        "date": "2026-07-19T13:43:04.717170+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 119865.0,
+        "profit": 685.0,
+        "return_percent": 0.575,
+        "cumulative_return": 19.865
+    },
+    {
+        "date": "2026-07-19T13:43:12.444624+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 120550.0,
+        "profit": 685.0,
+        "return_percent": 0.571,
+        "cumulative_return": 20.55
+    },
+    {
+        "date": "2026-07-19T13:43:13.658785+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 121235.0,
+        "profit": 685.0,
+        "return_percent": 0.568,
+        "cumulative_return": 21.235
+    },
+    {
+        "date": "2026-07-19T13:43:14.768734+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 121920.0,
+        "profit": 685.0,
+        "return_percent": 0.565,
+        "cumulative_return": 21.92
+    },
+    {
+        "date": "2026-07-19T13:43:18.953847+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 122605.0,
+        "profit": 685.0,
+        "return_percent": 0.562,
+        "cumulative_return": 22.605
+    },
+    {
+        "date": "2026-07-19T13:44:07.802900+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 123290.0,
+        "profit": 685.0,
+        "return_percent": 0.559,
+        "cumulative_return": 23.29
+    },
+    {
+        "date": "2026-07-19T13:44:15.200284+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 123975.0,
+        "profit": 685.0,
+        "return_percent": 0.556,
+        "cumulative_return": 23.975
+    },
+    {
+        "date": "2026-07-19T13:44:17.495698+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 124660.0,
+        "profit": 685.0,
+        "return_percent": 0.553,
+        "cumulative_return": 24.66
+    },
+    {
+        "date": "2026-07-19T13:44:21.661946+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 125345.0,
+        "profit": 685.0,
+        "return_percent": 0.549,
+        "cumulative_return": 25.345
+    },
+    {
+        "date": "2026-07-19T13:44:25.551187+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 126030.0,
+        "profit": 685.0,
+        "return_percent": 0.546,
+        "cumulative_return": 26.03
+    },
+    {
+        "date": "2026-07-19T13:44:29.271950+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 126715.0,
+        "profit": 685.0,
+        "return_percent": 0.544,
+        "cumulative_return": 26.715
+    },
+    {
+        "date": "2026-07-19T13:45:10.876816+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 127400.0,
+        "profit": 685.0,
+        "return_percent": 0.541,
+        "cumulative_return": 27.4
+    },
+    {
+        "date": "2026-07-19T13:45:17.822018+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 128085.0,
+        "profit": 685.0,
+        "return_percent": 0.538,
+        "cumulative_return": 28.085
+    },
+    {
+        "date": "2026-07-19T13:45:20.556311+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 128770.0,
+        "profit": 685.0,
+        "return_percent": 0.535,
+        "cumulative_return": 28.77
+    },
+    {
+        "date": "2026-07-19T13:45:24.760904+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 129455.0,
+        "profit": 685.0,
+        "return_percent": 0.532,
+        "cumulative_return": 29.455
+    },
+    {
+        "date": "2026-07-19T13:45:32.146259+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 130140.0,
+        "profit": 685.0,
+        "return_percent": 0.529,
+        "cumulative_return": 30.14
+    },
+    {
+        "date": "2026-07-19T13:45:34.268532+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 130825.0,
+        "profit": 685.0,
+        "return_percent": 0.526,
+        "cumulative_return": 30.825
+    },
+    {
+        "date": "2026-07-19T13:45:38.895012+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 131510.0,
+        "profit": 685.0,
+        "return_percent": 0.524,
+        "cumulative_return": 31.51
+    },
+    {
+        "date": "2026-07-19T13:46:13.699348+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 132195.0,
+        "profit": 685.0,
+        "return_percent": 0.521,
+        "cumulative_return": 32.195
+    },
+    {
+        "date": "2026-07-19T13:46:20.550189+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 132880.0,
+        "profit": 685.0,
+        "return_percent": 0.518,
+        "cumulative_return": 32.88
+    },
+    {
+        "date": "2026-07-19T13:46:23.122005+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 133565.0,
+        "profit": 685.0,
+        "return_percent": 0.516,
+        "cumulative_return": 33.565
+    },
+    {
+        "date": "2026-07-19T13:46:27.369661+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 134250.0,
+        "profit": 685.0,
+        "return_percent": 0.513,
+        "cumulative_return": 34.25
+    },
+    {
+        "date": "2026-07-19T13:46:34.972318+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 134935.0,
+        "profit": 685.0,
+        "return_percent": 0.51,
+        "cumulative_return": 34.935
+    },
+    {
+        "date": "2026-07-19T13:46:43.203883+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 135620.0,
+        "profit": 685.0,
+        "return_percent": 0.508,
+        "cumulative_return": 35.62
+    },
+    {
+        "date": "2026-07-19T13:46:45.090089+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 136305.0,
+        "profit": 685.0,
+        "return_percent": 0.505,
+        "cumulative_return": 36.305
+    },
+    {
+        "date": "2026-07-19T13:46:49.516094+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 136990.0,
+        "profit": 685.0,
+        "return_percent": 0.503,
+        "cumulative_return": 36.99
+    },
+    {
+        "date": "2026-07-19T13:47:16.896065+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 137675.0,
+        "profit": 685.0,
+        "return_percent": 0.5,
+        "cumulative_return": 37.675
+    },
+    {
+        "date": "2026-07-19T13:47:23.596313+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 138360.0,
+        "profit": 685.0,
+        "return_percent": 0.498,
+        "cumulative_return": 38.36
+    },
+    {
+        "date": "2026-07-19T13:47:25.905219+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 139045.0,
+        "profit": 685.0,
+        "return_percent": 0.495,
+        "cumulative_return": 39.045
+    },
+    {
+        "date": "2026-07-19T13:47:30.268422+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 139730.0,
+        "profit": 685.0,
+        "return_percent": 0.493,
+        "cumulative_return": 39.73
+    },
+    {
+        "date": "2026-07-19T13:47:37.544264+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 140415.0,
+        "profit": 685.0,
+        "return_percent": 0.49,
+        "cumulative_return": 40.415
+    },
+    {
+        "date": "2026-07-19T13:47:45.855699+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 141100.0,
+        "profit": 685.0,
+        "return_percent": 0.488,
+        "cumulative_return": 41.1
+    },
+    {
+        "date": "2026-07-19T13:47:52.182267+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 141785.0,
+        "profit": 685.0,
+        "return_percent": 0.485,
+        "cumulative_return": 41.785
+    },
+    {
+        "date": "2026-07-19T13:47:54.677325+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 142470.0,
+        "profit": 685.0,
+        "return_percent": 0.483,
+        "cumulative_return": 42.47
+    },
+    {
+        "date": "2026-07-19T13:47:59.563222+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 143155.0,
+        "profit": 685.0,
+        "return_percent": 0.481,
+        "cumulative_return": 43.155
+    },
+    {
+        "date": "2026-07-19T13:48:28.318378+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 143840.0,
+        "profit": 685.0,
+        "return_percent": 0.479,
+        "cumulative_return": 43.84
+    },
+    {
+        "date": "2026-07-19T13:48:34.632041+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 144525.0,
+        "profit": 685.0,
+        "return_percent": 0.476,
+        "cumulative_return": 44.525
+    },
+    {
+        "date": "2026-07-19T13:48:36.807376+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 145210.0,
+        "profit": 685.0,
+        "return_percent": 0.474,
+        "cumulative_return": 45.21
+    },
+    {
+        "date": "2026-07-19T13:48:41.412166+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 145895.0,
+        "profit": 685.0,
+        "return_percent": 0.472,
+        "cumulative_return": 45.895
+    },
+    {
+        "date": "2026-07-19T13:48:48.599172+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 146580.0,
+        "profit": 685.0,
+        "return_percent": 0.47,
+        "cumulative_return": 46.58
+    },
+    {
+        "date": "2026-07-19T13:48:56.932191+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 147265.0,
+        "profit": 685.0,
+        "return_percent": 0.467,
+        "cumulative_return": 47.265
+    },
+    {
+        "date": "2026-07-19T13:49:03.951584+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 147950.0,
+        "profit": 685.0,
+        "return_percent": 0.465,
+        "cumulative_return": 47.95
+    },
+    {
+        "date": "2026-07-19T13:49:10.749262+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 148635.0,
+        "profit": 685.0,
+        "return_percent": 0.463,
+        "cumulative_return": 48.635
+    },
+    {
+        "date": "2026-07-19T13:49:13.282740+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 149320.0,
+        "profit": 685.0,
+        "return_percent": 0.461,
+        "cumulative_return": 49.32
+    },
+    {
+        "date": "2026-07-19T13:49:18.058063+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 150005.0,
+        "profit": 685.0,
+        "return_percent": 0.459,
+        "cumulative_return": 50.005
+    },
+    {
+        "date": "2026-07-19T13:49:31.459333+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 150690.0,
+        "profit": 685.0,
+        "return_percent": 0.457,
+        "cumulative_return": 50.69
+    },
+    {
+        "date": "2026-07-19T13:49:37.335535+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 151375.0,
+        "profit": 685.0,
+        "return_percent": 0.455,
+        "cumulative_return": 51.375
+    },
+    {
+        "date": "2026-07-19T13:49:39.603261+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 152060.0,
+        "profit": 685.0,
+        "return_percent": 0.453,
+        "cumulative_return": 52.06
+    },
+    {
+        "date": "2026-07-19T13:49:44.502720+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 152745.0,
+        "profit": 685.0,
+        "return_percent": 0.45,
+        "cumulative_return": 52.745
+    },
+    {
+        "date": "2026-07-19T13:49:51.883242+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 153430.0,
+        "profit": 685.0,
+        "return_percent": 0.448,
+        "cumulative_return": 53.43
+    },
+    {
+        "date": "2026-07-19T13:50:00.693214+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 154115.0,
+        "profit": 685.0,
+        "return_percent": 0.446,
+        "cumulative_return": 54.115
+    },
+    {
+        "date": "2026-07-19T13:50:06.960600+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 154800.0,
+        "profit": 685.0,
+        "return_percent": 0.444,
+        "cumulative_return": 54.8
+    },
+    {
+        "date": "2026-07-19T13:50:13.589996+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 155485.0,
+        "profit": 685.0,
+        "return_percent": 0.443,
+        "cumulative_return": 55.485
+    },
+    {
+        "date": "2026-07-19T13:50:20.619960+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 156170.0,
+        "profit": 685.0,
+        "return_percent": 0.441,
+        "cumulative_return": 56.17
+    },
+    {
+        "date": "2026-07-19T13:50:23.420064+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 156855.0,
+        "profit": 685.0,
+        "return_percent": 0.439,
+        "cumulative_return": 56.855
+    },
+    {
+        "date": "2026-07-19T13:50:28.557328+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 157540.0,
+        "profit": 685.0,
+        "return_percent": 0.437,
+        "cumulative_return": 57.54
+    },
+    {
+        "date": "2026-07-19T13:50:36.818151+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 158225.0,
+        "profit": 685.0,
+        "return_percent": 0.435,
+        "cumulative_return": 58.225
+    },
+    {
+        "date": "2026-07-19T13:50:40.186668+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 158910.0,
+        "profit": 685.0,
+        "return_percent": 0.433,
+        "cumulative_return": 58.91
+    },
+    {
+        "date": "2026-07-19T13:50:42.459622+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 159595.0,
+        "profit": 685.0,
+        "return_percent": 0.431,
+        "cumulative_return": 59.595
+    },
+    {
+        "date": "2026-07-19T13:50:47.430191+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 160280.0,
+        "profit": 685.0,
+        "return_percent": 0.429,
+        "cumulative_return": 60.28
+    },
+    {
+        "date": "2026-07-19T13:50:55.153265+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 160965.0,
+        "profit": 685.0,
+        "return_percent": 0.427,
+        "cumulative_return": 60.965
+    },
+    {
+        "date": "2026-07-19T13:51:04.705584+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 161650.0,
+        "profit": 685.0,
+        "return_percent": 0.426,
+        "cumulative_return": 61.65
+    },
+    {
+        "date": "2026-07-19T13:51:10.330308+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 162335.0,
+        "profit": 685.0,
+        "return_percent": 0.424,
+        "cumulative_return": 62.335
+    },
+    {
+        "date": "2026-07-19T13:51:15.090516+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 163020.0,
+        "profit": 685.0,
+        "return_percent": 0.422,
+        "cumulative_return": 63.02
+    },
+    {
+        "date": "2026-07-19T13:51:17.078457+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 163705.0,
+        "profit": 685.0,
+        "return_percent": 0.42,
+        "cumulative_return": 63.705
+    },
+    {
+        "date": "2026-07-19T13:51:24.231297+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 164390.0,
+        "profit": 685.0,
+        "return_percent": 0.418,
+        "cumulative_return": 64.39
+    },
+    {
+        "date": "2026-07-19T13:51:31.674635+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 165075.0,
+        "profit": 685.0,
+        "return_percent": 0.417,
+        "cumulative_return": 65.075
+    },
+    {
+        "date": "2026-07-19T13:51:33.724263+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 165760.0,
+        "profit": 685.0,
+        "return_percent": 0.415,
+        "cumulative_return": 65.76
+    },
+    {
+        "date": "2026-07-19T13:51:39.181298+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 166445.0,
+        "profit": 685.0,
+        "return_percent": 0.413,
+        "cumulative_return": 66.445
+    },
+    {
+        "date": "2026-07-19T13:51:39.828023+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 167130.0,
+        "profit": 685.0,
+        "return_percent": 0.412,
+        "cumulative_return": 67.13
+    },
+    {
+        "date": "2026-07-19T13:51:44.035410+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 167815.0,
+        "profit": 685.0,
+        "return_percent": 0.41,
+        "cumulative_return": 67.815
+    },
+    {
+        "date": "2026-07-19T13:51:50.231602+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 168500.0,
+        "profit": 685.0,
+        "return_percent": 0.408,
+        "cumulative_return": 68.5
+    },
+    {
+        "date": "2026-07-19T13:51:58.462017+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 169185.0,
+        "profit": 685.0,
+        "return_percent": 0.407,
+        "cumulative_return": 69.185
+    },
+    {
+        "date": "2026-07-19T13:52:07.867261+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 169870.0,
+        "profit": 685.0,
+        "return_percent": 0.405,
+        "cumulative_return": 69.87
+    },
+    {
+        "date": "2026-07-19T13:52:13.115272+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 170555.0,
+        "profit": 685.0,
+        "return_percent": 0.403,
+        "cumulative_return": 70.555
+    },
+    {
+        "date": "2026-07-19T13:52:17.833784+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 171240.0,
+        "profit": 685.0,
+        "return_percent": 0.402,
+        "cumulative_return": 71.24
+    },
+    {
+        "date": "2026-07-19T13:52:20.580129+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 171925.0,
+        "profit": 685.0,
+        "return_percent": 0.4,
+        "cumulative_return": 71.925
+    },
+    {
+        "date": "2026-07-19T13:52:28.008915+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 172610.0,
+        "profit": 685.0,
+        "return_percent": 0.398,
+        "cumulative_return": 72.61
+    },
+    {
+        "date": "2026-07-19T13:52:35.066667+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 173295.0,
+        "profit": 685.0,
+        "return_percent": 0.397,
+        "cumulative_return": 73.295
+    },
+    {
+        "date": "2026-07-19T13:52:43.291210+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 173980.0,
+        "profit": 685.0,
+        "return_percent": 0.395,
+        "cumulative_return": 73.98
+    },
+    {
+        "date": "2026-07-19T13:52:43.448259+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 174665.0,
+        "profit": 685.0,
+        "return_percent": 0.394,
+        "cumulative_return": 74.665
+    },
+    {
+        "date": "2026-07-19T13:52:44.680233+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 175350.0,
+        "profit": 685.0,
+        "return_percent": 0.392,
+        "cumulative_return": 75.35
+    },
+    {
+        "date": "2026-07-19T13:52:47.777198+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 176035.0,
+        "profit": 685.0,
+        "return_percent": 0.391,
+        "cumulative_return": 76.035
+    },
+    {
+        "date": "2026-07-19T13:52:50.009820+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 176720.0,
+        "profit": 685.0,
+        "return_percent": 0.389,
+        "cumulative_return": 76.72
+    },
+    {
+        "date": "2026-07-19T13:52:53.508694+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 177405.0,
+        "profit": 685.0,
+        "return_percent": 0.388,
+        "cumulative_return": 77.405
+    },
+    {
+        "date": "2026-07-19T13:53:02.273820+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 178090.0,
+        "profit": 685.0,
+        "return_percent": 0.386,
+        "cumulative_return": 78.09
+    },
+    {
+        "date": "2026-07-19T13:53:11.089734+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 178775.0,
+        "profit": 685.0,
+        "return_percent": 0.385,
+        "cumulative_return": 78.775
+    },
+    {
+        "date": "2026-07-19T13:53:15.856788+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 179460.0,
+        "profit": 685.0,
+        "return_percent": 0.383,
+        "cumulative_return": 79.46
+    },
+    {
+        "date": "2026-07-19T13:53:20.777294+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 180145.0,
+        "profit": 685.0,
+        "return_percent": 0.382,
+        "cumulative_return": 80.145
+    },
+    {
+        "date": "2026-07-19T13:53:27.333345+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 180830.0,
+        "profit": 685.0,
+        "return_percent": 0.38,
+        "cumulative_return": 80.83
+    },
+    {
+        "date": "2026-07-19T13:53:56.653133+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 181515.0,
+        "profit": 685.0,
+        "return_percent": 0.379,
+        "cumulative_return": 81.515
+    },
+    {
+        "date": "2026-07-19T13:54:01.964199+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 182200.0,
+        "profit": 685.0,
+        "return_percent": 0.377,
+        "cumulative_return": 82.2
+    },
+    {
+        "date": "2026-07-19T13:54:30.554025+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 182885.0,
+        "profit": 685.0,
+        "return_percent": 0.376,
+        "cumulative_return": 82.885
+    },
+    {
+        "date": "2026-07-19T13:55:06.298897+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 183570.0,
+        "profit": 685.0,
+        "return_percent": 0.375,
+        "cumulative_return": 83.57
+    },
+    {
+        "date": "2026-07-19T13:55:06.402717+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 184255.0,
+        "profit": 685.0,
+        "return_percent": 0.373,
+        "cumulative_return": 84.255
+    },
+    {
+        "date": "2026-07-19T13:55:10.357410+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 184940.0,
+        "profit": 685.0,
+        "return_percent": 0.372,
+        "cumulative_return": 84.94
+    },
+    {
+        "date": "2026-07-19T13:55:33.240185+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 185625.0,
+        "profit": 685.0,
+        "return_percent": 0.37,
+        "cumulative_return": 85.625
+    },
+    {
+        "date": "2026-07-19T13:56:09.580222+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 186310.0,
+        "profit": 685.0,
+        "return_percent": 0.369,
+        "cumulative_return": 86.31
+    },
+    {
+        "date": "2026-07-19T13:56:13.959659+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 186995.0,
+        "profit": 685.0,
+        "return_percent": 0.368,
+        "cumulative_return": 86.995
+    },
+    {
+        "date": "2026-07-19T13:56:15.604275+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 187680.0,
+        "profit": 685.0,
+        "return_percent": 0.366,
+        "cumulative_return": 87.68
+    },
+    {
+        "date": "2026-07-19T13:56:20.948769+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 188365.0,
+        "profit": 685.0,
+        "return_percent": 0.365,
+        "cumulative_return": 88.365
+    },
+    {
+        "date": "2026-07-19T13:56:35.812801+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 189050.0,
+        "profit": 685.0,
+        "return_percent": 0.364,
+        "cumulative_return": 89.05
+    },
+    {
+        "date": "2026-07-19T13:56:37.474917+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 189735.0,
+        "profit": 685.0,
+        "return_percent": 0.362,
+        "cumulative_return": 89.735
+    },
+    {
+        "date": "2026-07-19T13:57:13.216573+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 190420.0,
+        "profit": 685.0,
+        "return_percent": 0.361,
+        "cumulative_return": 90.42
+    },
+    {
+        "date": "2026-07-19T13:57:17.034843+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 191105.0,
+        "profit": 685.0,
+        "return_percent": 0.36,
+        "cumulative_return": 91.105
+    },
+    {
+        "date": "2026-07-19T13:57:23.974801+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 191790.0,
+        "profit": 685.0,
+        "return_percent": 0.358,
+        "cumulative_return": 91.79
+    },
+    {
+        "date": "2026-07-19T13:57:26.708421+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 192475.0,
+        "profit": 685.0,
+        "return_percent": 0.357,
+        "cumulative_return": 92.475
+    },
+    {
+        "date": "2026-07-19T13:57:34.268178+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 193160.0,
+        "profit": 685.0,
+        "return_percent": 0.356,
+        "cumulative_return": 93.16
+    },
+    {
+        "date": "2026-07-19T13:57:40.239996+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 193845.0,
+        "profit": 685.0,
+        "return_percent": 0.355,
+        "cumulative_return": 93.845
+    },
+    {
+        "date": "2026-07-19T13:57:41.068709+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 194530.0,
+        "profit": 685.0,
+        "return_percent": 0.353,
+        "cumulative_return": 94.53
+    },
+    {
+        "date": "2026-07-19T13:58:16.790001+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 195215.0,
+        "profit": 685.0,
+        "return_percent": 0.352,
+        "cumulative_return": 95.215
+    },
+    {
+        "date": "2026-07-19T13:58:20.432069+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 195900.0,
+        "profit": 685.0,
+        "return_percent": 0.351,
+        "cumulative_return": 95.9
+    },
+    {
+        "date": "2026-07-19T13:58:29.158103+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 196585.0,
+        "profit": 685.0,
+        "return_percent": 0.35,
+        "cumulative_return": 96.585
+    },
+    {
+        "date": "2026-07-19T13:58:37.303516+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 197270.0,
+        "profit": 685.0,
+        "return_percent": 0.348,
+        "cumulative_return": 97.27
+    },
+    {
+        "date": "2026-07-19T13:58:38.394834+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 197955.0,
+        "profit": 685.0,
+        "return_percent": 0.347,
+        "cumulative_return": 97.955
+    },
+    {
+        "date": "2026-07-19T13:58:41.251483+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 198640.0,
+        "profit": 685.0,
+        "return_percent": 0.346,
+        "cumulative_return": 98.64
+    },
+    {
+        "date": "2026-07-19T13:58:43.295963+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 199325.0,
+        "profit": 685.0,
+        "return_percent": 0.345,
+        "cumulative_return": 99.325
+    },
+    {
+        "date": "2026-07-19T13:58:44.218053+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 200010.0,
+        "profit": 685.0,
+        "return_percent": 0.344,
+        "cumulative_return": 100.01
+    },
+    {
+        "date": "2026-07-19T13:59:20.240142+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 200695.0,
+        "profit": 685.0,
+        "return_percent": 0.342,
+        "cumulative_return": 100.695
+    },
+    {
+        "date": "2026-07-19T13:59:23.974294+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 201380.0,
+        "profit": 685.0,
+        "return_percent": 0.341,
+        "cumulative_return": 101.38
+    },
+    {
+        "date": "2026-07-19T13:59:32.768878+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 202065.0,
+        "profit": 685.0,
+        "return_percent": 0.34,
+        "cumulative_return": 102.065
+    },
+    {
+        "date": "2026-07-19T13:59:41.115093+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 202750.0,
+        "profit": 685.0,
+        "return_percent": 0.339,
+        "cumulative_return": 102.75
+    },
+    {
+        "date": "2026-07-19T13:59:44.324054+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 203435.0,
+        "profit": 685.0,
+        "return_percent": 0.338,
+        "cumulative_return": 103.435
+    },
+    {
+        "date": "2026-07-19T13:59:46.295256+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 204120.0,
+        "profit": 685.0,
+        "return_percent": 0.337,
+        "cumulative_return": 104.12
+    },
+    {
+        "date": "2026-07-19T13:59:46.837704+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 204805.0,
+        "profit": 685.0,
+        "return_percent": 0.336,
+        "cumulative_return": 104.805
+    },
+    {
+        "date": "2026-07-19T13:59:47.673727+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 205490.0,
+        "profit": 685.0,
+        "return_percent": 0.334,
+        "cumulative_return": 105.49
+    },
+    {
+        "date": "2026-07-19T13:59:52.104871+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 206175.0,
+        "profit": 685.0,
+        "return_percent": 0.333,
+        "cumulative_return": 106.175
+    },
+    {
+        "date": "2026-07-19T14:00:23.372906+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 206860.0,
+        "profit": 685.0,
+        "return_percent": 0.332,
+        "cumulative_return": 106.86
+    },
+    {
+        "date": "2026-07-19T14:00:26.991059+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 207545.0,
+        "profit": 685.0,
+        "return_percent": 0.331,
+        "cumulative_return": 107.545
+    },
+    {
+        "date": "2026-07-19T14:00:35.366444+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 208230.0,
+        "profit": 685.0,
+        "return_percent": 0.33,
+        "cumulative_return": 108.23
+    },
+    {
+        "date": "2026-07-19T14:00:43.845091+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 208915.0,
+        "profit": 685.0,
+        "return_percent": 0.329,
+        "cumulative_return": 108.915
+    },
+    {
+        "date": "2026-07-19T14:00:46.982518+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 209600.0,
+        "profit": 685.0,
+        "return_percent": 0.328,
+        "cumulative_return": 109.6
+    },
+    {
+        "date": "2026-07-19T14:00:49.259354+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 210285.0,
+        "profit": 685.0,
+        "return_percent": 0.327,
+        "cumulative_return": 110.285
+    },
+    {
+        "date": "2026-07-19T14:00:50.804443+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 210970.0,
+        "profit": 685.0,
+        "return_percent": 0.326,
+        "cumulative_return": 110.97
+    },
+    {
+        "date": "2026-07-19T14:00:55.584873+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 211655.0,
+        "profit": 685.0,
+        "return_percent": 0.325,
+        "cumulative_return": 111.655
+    },
+    {
+        "date": "2026-07-19T14:01:49.950315+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 212340.0,
+        "profit": 685.0,
+        "return_percent": 0.324,
+        "cumulative_return": 112.34
+    },
+    {
+        "date": "2026-07-19T14:01:53.062129+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 213025.0,
+        "profit": 685.0,
+        "return_percent": 0.323,
+        "cumulative_return": 113.025
+    },
+    {
+        "date": "2026-07-19T14:01:54.478432+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 213710.0,
+        "profit": 685.0,
+        "return_percent": 0.322,
+        "cumulative_return": 113.71
+    },
+    {
+        "date": "2026-07-19T14:01:58.743276+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 214395.0,
+        "profit": 685.0,
+        "return_percent": 0.321,
+        "cumulative_return": 114.395
+    },
+    {
+        "date": "2026-07-19T14:02:04.873983+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 215080.0,
+        "profit": 685.0,
+        "return_percent": 0.32,
+        "cumulative_return": 115.08
+    },
+    {
+        "date": "2026-07-19T14:02:07.478567+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 215765.0,
+        "profit": 685.0,
+        "return_percent": 0.318,
+        "cumulative_return": 115.765
+    },
+    {
+        "date": "2026-07-19T14:02:12.121383+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 216450.0,
+        "profit": 685.0,
+        "return_percent": 0.317,
+        "cumulative_return": 116.45
+    },
+    {
+        "date": "2026-07-19T14:02:28.564173+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 217135.0,
+        "profit": 685.0,
+        "return_percent": 0.316,
+        "cumulative_return": 117.135
+    },
+    {
+        "date": "2026-07-19T14:02:31.888701+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 217820.0,
+        "profit": 685.0,
+        "return_percent": 0.315,
+        "cumulative_return": 117.82
+    },
+    {
+        "date": "2026-07-19T14:02:40.586305+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 218505.0,
+        "profit": 685.0,
+        "return_percent": 0.314,
+        "cumulative_return": 118.505
+    },
+    {
+        "date": "2026-07-19T14:02:50.561666+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 219190.0,
+        "profit": 685.0,
+        "return_percent": 0.313,
+        "cumulative_return": 119.19
+    },
+    {
+        "date": "2026-07-19T14:02:53.558121+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 219875.0,
+        "profit": 685.0,
+        "return_percent": 0.313,
+        "cumulative_return": 119.875
+    },
+    {
+        "date": "2026-07-19T14:02:57.435656+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 220560.0,
+        "profit": 685.0,
+        "return_percent": 0.312,
+        "cumulative_return": 120.56
+    },
+    {
+        "date": "2026-07-19T14:03:04.584359+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 221245.0,
+        "profit": 685.0,
+        "return_percent": 0.311,
+        "cumulative_return": 121.245
+    },
+    {
+        "date": "2026-07-19T14:03:09.367141+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 221930.0,
+        "profit": 685.0,
+        "return_percent": 0.31,
+        "cumulative_return": 121.93
+    },
+    {
+        "date": "2026-07-19T14:03:16.292397+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 222615.0,
+        "profit": 685.0,
+        "return_percent": 0.309,
+        "cumulative_return": 122.615
+    },
+    {
+        "date": "2026-07-19T14:03:31.906007+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 223300.0,
+        "profit": 685.0,
+        "return_percent": 0.308,
+        "cumulative_return": 123.3
+    },
+    {
+        "date": "2026-07-19T14:03:35.171049+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 223985.0,
+        "profit": 685.0,
+        "return_percent": 0.307,
+        "cumulative_return": 123.985
+    },
+    {
+        "date": "2026-07-19T14:03:43.691444+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 224670.0,
+        "profit": 685.0,
+        "return_percent": 0.306,
+        "cumulative_return": 124.67
+    },
+    {
+        "date": "2026-07-19T14:03:53.776216+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 225355.0,
+        "profit": 685.0,
+        "return_percent": 0.305,
+        "cumulative_return": 125.355
+    },
+    {
+        "date": "2026-07-19T14:03:56.342398+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 226040.0,
+        "profit": 685.0,
+        "return_percent": 0.304,
+        "cumulative_return": 126.04
+    },
+    {
+        "date": "2026-07-19T14:04:00.861407+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 226725.0,
+        "profit": 685.0,
+        "return_percent": 0.303,
+        "cumulative_return": 126.725
+    },
+    {
+        "date": "2026-07-19T14:04:08.347468+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 227410.0,
+        "profit": 685.0,
+        "return_percent": 0.302,
+        "cumulative_return": 127.41
+    },
+    {
+        "date": "2026-07-19T14:04:12.652274+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 228095.0,
+        "profit": 685.0,
+        "return_percent": 0.301,
+        "cumulative_return": 128.095
+    },
+    {
+        "date": "2026-07-19T14:04:19.013632+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 228780.0,
+        "profit": 685.0,
+        "return_percent": 0.3,
+        "cumulative_return": 128.78
+    },
+    {
+        "date": "2026-07-19T14:04:34.880605+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 229465.0,
+        "profit": 685.0,
+        "return_percent": 0.299,
+        "cumulative_return": 129.465
+    },
+    {
+        "date": "2026-07-19T14:04:38.428544+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 230150.0,
+        "profit": 685.0,
+        "return_percent": 0.299,
+        "cumulative_return": 130.15
+    },
+    {
+        "date": "2026-07-19T14:04:46.489782+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 230835.0,
+        "profit": 685.0,
+        "return_percent": 0.298,
+        "cumulative_return": 130.835
+    },
+    {
+        "date": "2026-07-19T14:04:56.636500+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 231520.0,
+        "profit": 685.0,
+        "return_percent": 0.297,
+        "cumulative_return": 131.52
+    },
+    {
+        "date": "2026-07-19T14:04:59.360585+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 232205.0,
+        "profit": 685.0,
+        "return_percent": 0.296,
+        "cumulative_return": 132.205
+    },
+    {
+        "date": "2026-07-19T14:05:03.792266+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 232890.0,
+        "profit": 685.0,
+        "return_percent": 0.295,
+        "cumulative_return": 132.89
+    },
+    {
+        "date": "2026-07-19T14:05:11.662856+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 233575.0,
+        "profit": 685.0,
+        "return_percent": 0.294,
+        "cumulative_return": 133.575
+    },
+    {
+        "date": "2026-07-19T14:05:15.732068+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 234260.0,
+        "profit": 685.0,
+        "return_percent": 0.293,
+        "cumulative_return": 134.26
+    },
+    {
+        "date": "2026-07-19T14:05:22.017429+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 234945.0,
+        "profit": 685.0,
+        "return_percent": 0.292,
+        "cumulative_return": 134.945
+    },
+    {
+        "date": "2026-07-19T14:05:38.575699+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 235630.0,
+        "profit": 685.0,
+        "return_percent": 0.292,
+        "cumulative_return": 135.63
+    },
+    {
+        "date": "2026-07-19T14:05:41.380407+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 236315.0,
+        "profit": 685.0,
+        "return_percent": 0.291,
+        "cumulative_return": 136.315
+    },
+    {
+        "date": "2026-07-19T14:05:49.382694+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 237000.0,
+        "profit": 685.0,
+        "return_percent": 0.29,
+        "cumulative_return": 137.0
+    },
+    {
+        "date": "2026-07-19T14:05:59.958404+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 237685.0,
+        "profit": 685.0,
+        "return_percent": 0.289,
+        "cumulative_return": 137.685
+    },
+    {
+        "date": "2026-07-19T14:06:02.125883+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 238370.0,
+        "profit": 685.0,
+        "return_percent": 0.288,
+        "cumulative_return": 138.37
+    },
+    {
+        "date": "2026-07-19T14:06:06.465142+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 239055.0,
+        "profit": 685.0,
+        "return_percent": 0.287,
+        "cumulative_return": 139.055
+    },
+    {
+        "date": "2026-07-19T14:06:14.456352+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 239740.0,
+        "profit": 685.0,
+        "return_percent": 0.287,
+        "cumulative_return": 139.74
+    },
+    {
+        "date": "2026-07-19T14:06:18.734267+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 240425.0,
+        "profit": 685.0,
+        "return_percent": 0.286,
+        "cumulative_return": 140.425
+    },
+    {
+        "date": "2026-07-19T14:06:24.895359+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 241110.0,
+        "profit": 685.0,
+        "return_percent": 0.285,
+        "cumulative_return": 141.11
+    },
+    {
+        "date": "2026-07-19T14:06:41.527649+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 241795.0,
+        "profit": 685.0,
+        "return_percent": 0.284,
+        "cumulative_return": 141.795
+    },
+    {
+        "date": "2026-07-19T14:06:44.154523+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 242480.0,
+        "profit": 685.0,
+        "return_percent": 0.283,
+        "cumulative_return": 142.48
+    },
+    {
+        "date": "2026-07-19T14:06:52.055417+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 243165.0,
+        "profit": 685.0,
+        "return_percent": 0.282,
+        "cumulative_return": 143.165
+    },
+    {
+        "date": "2026-07-19T14:07:02.951137+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 243850.0,
+        "profit": 685.0,
+        "return_percent": 0.282,
+        "cumulative_return": 143.85
+    },
+    {
+        "date": "2026-07-19T14:07:04.954051+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 244535.0,
+        "profit": 685.0,
+        "return_percent": 0.281,
+        "cumulative_return": 144.535
+    },
+    {
+        "date": "2026-07-19T14:07:09.490300+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 245220.0,
+        "profit": 685.0,
+        "return_percent": 0.28,
+        "cumulative_return": 145.22
+    },
+    {
+        "date": "2026-07-19T14:07:17.417445+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 245905.0,
+        "profit": 685.0,
+        "return_percent": 0.279,
+        "cumulative_return": 145.905
+    },
+    {
+        "date": "2026-07-19T14:07:21.520084+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 246590.0,
+        "profit": 685.0,
+        "return_percent": 0.279,
+        "cumulative_return": 146.59
+    },
+    {
+        "date": "2026-07-19T14:07:27.588914+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 247275.0,
+        "profit": 685.0,
+        "return_percent": 0.278,
+        "cumulative_return": 147.275
+    },
+    {
+        "date": "2026-07-19T14:07:45.230562+00:00",
+        "trade_id": "GSIS-20260719-130130",
+        "equity": 247960.0,
+        "profit": 685.0,
+        "return_percent": 0.277,
+        "cumulative_return": 147.96
+    }
+]

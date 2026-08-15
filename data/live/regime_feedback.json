@@ -1,0 +1,18 @@
+{
+    "engine": "GSIS_REGIME_FEEDBACK_ENGINE_v1.0",
+    "status": "ACTIVE",
+    "heartbeat": 1784276849.2139935,
+    "timestamp": "2026-07-17T08:27:29.214002+00:00",
+    "feedback": {
+        "active_regime": "MARKDOWN",
+        "regime_statistics": {
+            "samples": 0,
+            "wins": 0,
+            "losses": 0,
+            "accuracy": 0
+        },
+        "global_accuracy": 0.0,
+        "total_samples": 2,
+        "model_action": "COLLECTING_DATA"
+    }
+}

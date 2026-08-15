@@ -1,0 +1,14 @@
+{
+    "engine": "GSIS_DECISION_ENGINE_v3.0",
+    "decision": "WAIT",
+    "score": -40,
+    "regime": "MARKDOWN",
+    "bull_probability": 50,
+    "bear_probability": 65,
+    "confidence": 40,
+    "execution_permission": "BLOCK",
+    "evidence": [
+        "HMM_MARKDOWN"
+    ],
+    "timestamp": 1784217938.579192
+}

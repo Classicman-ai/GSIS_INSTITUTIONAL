@@ -1,0 +1,22 @@
+{
+    "symbol": "BTCUSDT",
+    "regime": "MARKUP",
+    "structure": {
+        "symbol": "BTCUSDT",
+        "price": 64252.11,
+        "internal_structure": "BULLISH",
+        "external_structure": "COLLECTING",
+        "trend": "UNKNOWN",
+        "BOS": false,
+        "CHOCH": false,
+        "last_high": 64260.13,
+        "last_low": null,
+        "confidence": 0,
+        "timestamp": 1784190220.0455277
+    },
+    "market_state": "BULLISH_DEVELOPING",
+    "execution_mode": "WAIT_CONFIRMATION",
+    "fusion_score": 30,
+    "confidence": 30,
+    "timestamp": 1784193776.9314022
+}

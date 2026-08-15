@@ -1,0 +1,13 @@
+{
+    "symbol": "BTCUSDT",
+    "direction": "BUY",
+    "qualification": "A+",
+    "qualification_score": 95,
+    "timeframe": "M15",
+    "conditions": [
+        "BAYESIAN_ALIGNED",
+        "REGIME_ALIGNED",
+        "CONFIRMATION_ALIGNED"
+    ],
+    "timestamp": "2026-07-21T21:39:59.102363+00:00"
+}

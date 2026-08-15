@@ -1,0 +1,28 @@
+{
+    "engine": "GSIS_REGIME_MEMORY_ENGINE_v1.2",
+    "status": "ACTIVE",
+    "heartbeat": 1784276813.7452972,
+    "timestamp": "2026-07-17T08:26:53.745308+00:00",
+    "current_regime": "MARKDOWN",
+    "regime_statistics": {
+        "last_regime": "MARKDOWN",
+        "MARKUP": {
+            "samples": 0,
+            "wins": 0,
+            "losses": 0,
+            "accuracy": 0
+        },
+        "MARKDOWN": {
+            "samples": 0,
+            "wins": 0,
+            "losses": 0,
+            "accuracy": 0
+        },
+        "RANGE": {
+            "samples": 0,
+            "wins": 0,
+            "losses": 0,
+            "accuracy": 0
+        }
+    }
+}

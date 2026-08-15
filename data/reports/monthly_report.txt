@@ -1,0 +1,65 @@
+
+******** GSIS MONTHLY PERFORMANCE ********
+
+
+MONTH:
+July 2026
+
+
+TRADING STATISTICS
+
+Total Events:
+3
+
+Winning Events:
+3
+
+Loss Events:
+0
+
+Win Rate:
+100.0%
+
+
+
+PERFORMANCE METRICS
+
+
+Monthly Return:
+CALCULATING FROM EQUITY ENGINE
+
+
+Cumulative Return:
+CALCULATING FROM EQUITY ENGINE
+
+
+Best Trading Day:
+PENDING DATA
+
+
+Worst Trading Day:
+PENDING DATA
+
+
+Average Trade Duration:
+PENDING DATA
+
+
+
+EQUITY GROWTH CURVE
+
+
+Day 1   ████
+Day 10  ███████
+Day 20  ███████████
+Day 30  ███████████████
+
+
+
+SYSTEM:
+
+GSIS AUTHORITY ENGINE v1.3
+
+STATUS:
+
+ACTIVE 🛡️

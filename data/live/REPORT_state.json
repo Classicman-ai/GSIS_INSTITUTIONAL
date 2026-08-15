@@ -1,0 +1,22 @@
+{
+    "engine": "GSIS_REPORT_ENGINE_v3.0",
+    "status": "ACTIVE",
+    "heartbeat": 1784371955.5345278,
+    "timestamp": "2026-07-18T10:52:35.534538+00:00",
+    "state": {
+        "symbol": "BTCUSDT",
+        "market_regime": "MARKDOWN",
+        "regime_score": 60,
+        "signal": "WAIT",
+        "direction": "NONE",
+        "probability": 80,
+        "qualification": "B_SETUP",
+        "qualification_score": 60,
+        "confirmation": false,
+        "confirmation_score": 0,
+        "risk_status": "BLOCKED",
+        "execution_status": "BLOCKED",
+        "final_decision": "WAIT",
+        "reason": "WAITING_FOR_CONFIRMATION"
+    }
+}

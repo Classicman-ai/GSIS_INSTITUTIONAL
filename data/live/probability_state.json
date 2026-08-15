@@ -1,0 +1,18 @@
+{
+    "engine": "GSIS_PROBABILITY_ENGINE_v1.0",
+    "status": "ACTIVE",
+    "heartbeat": 1784371981.3239183,
+    "timestamp": "2026-07-18T10:53:01.323930+00:00",
+    "state": {
+        "symbol": "BTCUSDT",
+        "market_state": "BEARISH",
+        "bullish_probability": 0.0,
+        "bearish_probability": 68.97,
+        "neutral_probability": 31.03,
+        "confidence": 68.97,
+        "score": -55,
+        "evidence": [
+            "BEARISH_REGIME"
+        ]
+    }
+}

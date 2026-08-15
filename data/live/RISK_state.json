@@ -1,0 +1,19 @@
+{
+    "engine": "GSIS_RISK_ENGINE_v3.0",
+    "status": "ACTIVE",
+    "heartbeat": 1784403481.958065,
+    "timestamp": "2026-07-18T19:38:01.958077+00:00",
+    "state": {
+        "symbol": "BTCUSDT",
+        "risk_status": "BLOCKED",
+        "direction": "SHORT",
+        "qualification": "B_SETUP",
+        "qualification_score": 60,
+        "confirmation": false,
+        "risk_percent": 1.0,
+        "risk_reward": 0,
+        "entry": null,
+        "stop_loss": null,
+        "take_profit": null
+    }
+}

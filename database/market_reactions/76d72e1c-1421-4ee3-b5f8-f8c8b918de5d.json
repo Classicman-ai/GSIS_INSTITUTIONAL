@@ -1,0 +1,30 @@
+{
+    "event_id": "76d72e1c-1421-4ee3-b5f8-f8c8b918de5d",
+    "event": "NFP",
+    "forecast": "185",
+    "actual": "225",
+    "surprise": 40.0,
+    "market_before": {
+        "trend": "BULLISH",
+        "bos": false,
+        "choch": false,
+        "liquidity": "BUY_SIDE"
+    },
+    "market_after": {
+        "trend": "BEARISH",
+        "bos": true,
+        "choch": true,
+        "liquidity_sweep": true,
+        "order_block": true,
+        "fvg": true,
+        "candlestick": "BEARISH_ENGULFING",
+        "chart_pattern": "HEAD_AND_SHOULDERS"
+    },
+    "trade": {
+        "decision": "SELL",
+        "confidence": 94,
+        "result": "WIN",
+        "rr": 3.2
+    },
+    "timestamp": "2026-07-30T08:57:30.324233+00:00"
+}

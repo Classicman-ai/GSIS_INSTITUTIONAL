@@ -1,0 +1,11 @@
+{
+    "confirmed": true,
+    "confirmation_score": 95,
+    "trend": "BULLISH",
+    "signals": [
+        "BOS_CONFIRMED",
+        "LIQUIDITY_SWEEP",
+        "STRUCTURE_ALIGNED"
+    ],
+    "timestamp": "2026-07-21T21:39:58.974967+00:00"
+}

@@ -1,0 +1,58 @@
+[
+    {
+        "trade_id": "GSIS-NEW-SESSION-TEST",
+        "event": "TRADE_OPENED",
+        "session_id": "GSIS-SESSION-20260720-111510-35bc6e5a",
+        "telegram_status": "DELIVERED",
+        "message_id": 583,
+        "timestamp": "2026-07-20T11:24:45.122117+00:00"
+    },
+    {
+        "trade_id": "GSIS-NEW-SESSION-TEST",
+        "event": "TP1_HIT",
+        "session_id": "GSIS-SESSION-20260720-111510-35bc6e5a",
+        "telegram_status": "DELIVERED",
+        "message_id": 584,
+        "timestamp": "2026-07-20T11:24:45.928289+00:00"
+    },
+    {
+        "trade_id": "GSIS-NEW-SESSION-TEST",
+        "event": "TP2_HIT",
+        "session_id": "GSIS-SESSION-20260720-111510-35bc6e5a",
+        "telegram_status": "DELIVERED",
+        "message_id": 585,
+        "timestamp": "2026-07-20T11:24:46.550227+00:00"
+    },
+    {
+        "trade_id": "GSIS-NEW-SESSION-TEST",
+        "event": "TP3_HIT",
+        "session_id": "GSIS-SESSION-20260720-111510-35bc6e5a",
+        "telegram_status": "DELIVERED",
+        "message_id": 586,
+        "timestamp": "2026-07-20T11:24:47.174115+00:00"
+    },
+    {
+        "trade_id": "GSIS-NEW-SESSION-TEST",
+        "event": "TP4_HIT",
+        "session_id": "GSIS-SESSION-20260720-111510-35bc6e5a",
+        "telegram_status": "DELIVERED",
+        "message_id": 587,
+        "timestamp": "2026-07-20T11:24:47.822660+00:00"
+    },
+    {
+        "trade_id": "GSIS-NEW-SESSION-TEST",
+        "event": "STOP_MOVED_BREAK_EVEN",
+        "session_id": "GSIS-SESSION-20260720-111510-35bc6e5a",
+        "telegram_status": "DELIVERED",
+        "message_id": 588,
+        "timestamp": "2026-07-20T11:24:48.432769+00:00"
+    },
+    {
+        "trade_id": "GSIS-NEW-SESSION-TEST",
+        "event": "TRADE_COMPLETED",
+        "session_id": "GSIS-SESSION-20260720-111510-35bc6e5a",
+        "telegram_status": "DELIVERED",
+        "message_id": 589,
+        "timestamp": "2026-07-20T11:24:49.067002+00:00"
+    }
+]

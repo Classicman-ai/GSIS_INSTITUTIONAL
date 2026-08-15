@@ -1,0 +1,17 @@
+{
+    "engine": "FUSION",
+    "status": "ACTIVE",
+    "heartbeat": 1784280906.688412,
+    "timestamp": "2026-07-17T09:35:06.688420+00:00",
+    "state": {
+        "symbol": "BTCUSDT",
+        "institutional_score": -30,
+        "bias": "NEUTRAL",
+        "regime": "MARKDOWN",
+        "trend": "NEUTRAL",
+        "orderflow": "NEUTRAL",
+        "evidence": [
+            "HMM_BEARISH_REGIME"
+        ]
+    }
+}

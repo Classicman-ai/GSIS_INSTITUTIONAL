@@ -1,0 +1,21 @@
+[
+    {
+        "trade_id": "TEST-001",
+        "stages": {
+            "intelligence": "APPROVED",
+            "risk": "APPROVED",
+            "execution": "APPROVED",
+            "broker": "SIMULATION APPROVED"
+        },
+        "timestamp": "2026-07-29T09:59:39.550466+00:00"
+    },
+    {
+        "event": "PIPELINE_TEST",
+        "status": "SUCCESS",
+        "details": {
+            "module": "AUDIT ENGINE",
+            "environment": "SIMULATION"
+        },
+        "timestamp": "2026-07-29T10:09:45.926137+00:00"
+    }
+]

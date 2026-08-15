@@ -1,0 +1,24 @@
+{
+    "engine": "GSIS_BAYESIAN_ADAPTIVE_LEARNING_ENGINE_v2.0",
+    "status": "ACTIVE",
+    "heartbeat": 1784403433.0428262,
+    "timestamp": "2026-07-18T19:37:13.042843+00:00",
+    "state": {
+        "market": {
+            "regime": "MARKDOWN",
+            "confidence": 52.4
+        },
+        "prediction": {
+            "direction": "NONE",
+            "signal": "WAIT",
+            "confidence": 80
+        },
+        "bayesian_learning": {
+            "samples": 2,
+            "accuracy": 0.0,
+            "confidence_adjustment": 0,
+            "learning_state": "INSUFFICIENT_HISTORY"
+        },
+        "adjusted_confidence": 80
+    }
+}

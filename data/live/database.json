@@ -1,0 +1,7 @@
+{
+    "engine": "DATABASE",
+    "status": "ACTIVE",
+    "heartbeat": 1784279361.491723,
+    "timestamp": "2026-07-17T09:09:21.491734+00:00",
+    "database": "data/gsis.db"
+}

@@ -1,0 +1,48 @@
+{
+    "engine": "GSIS_CORE_SUPERVISOR_v3.0",
+    "status": "ACTIVE",
+    "heartbeat": 1784371951.0296512,
+    "timestamp": "2026-07-18T10:52:31.029683+00:00",
+    "running_engines": [
+        {
+            "module": "engines.data.market_bridge",
+            "pid": 29788
+        },
+        {
+            "module": "engines.supervisor.health_monitor",
+            "pid": 29789
+        },
+        {
+            "module": "engines.scoring.regime_score_engine",
+            "pid": 29790
+        },
+        {
+            "module": "engines.bayesian.bayesian_engine",
+            "pid": 29791
+        },
+        {
+            "module": "engines.signal.master_signal_engine",
+            "pid": 29792
+        },
+        {
+            "module": "engines.confirmation.confirmation_engine",
+            "pid": 29793
+        },
+        {
+            "module": "engines.qualification.qualification_engine",
+            "pid": 29794
+        },
+        {
+            "module": "engines.risk.risk_engine",
+            "pid": 29795
+        },
+        {
+            "module": "engines.execution.execution_engine",
+            "pid": 29796
+        },
+        {
+            "module": "engines.report.report_engine",
+            "pid": 29797
+        }
+    ]
+}

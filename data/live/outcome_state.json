@@ -1,0 +1,23 @@
+{
+    "engine": "GSIS_OUTCOME_TRACKER_ENGINE_v1.0",
+    "status": "ACTIVE",
+    "heartbeat": 1784275686.0556805,
+    "timestamp": "2026-07-17T08:08:06.055705+00:00",
+    "state": {
+        "prediction": {
+            "symbol": "BTCUSDT",
+            "regime": "MARKDOWN",
+            "market_state": "BEARISH",
+            "bullish_probability": 0.0,
+            "bearish_probability": 68.97,
+            "decision": "WAIT"
+        },
+        "evaluation": "MONITORING_SHORT_BIAS",
+        "statistics": {
+            "samples": 2,
+            "correct": 0,
+            "wrong": 0,
+            "accuracy": 0.0
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "system": "ONLINE",
+    "recovery": "ACTIVE",
+    "engines": {
+        "master_daemon": "RECOVERING",
+        "watchdog": "HEALTHY",
+        "supervisor": "RECOVERING"
+    },
+    "timestamp": "2026-07-19T14:02:04.238649+00:00"
+}

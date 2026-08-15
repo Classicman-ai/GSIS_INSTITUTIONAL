@@ -1,0 +1,18 @@
+{
+    "engine": "STRUCTURE",
+    "status": "ACTIVE",
+    "heartbeat": 1784371925.5167212,
+    "timestamp": "2026-07-18T10:52:05.516731+00:00",
+    "state": {
+        "symbol": "BTCUSDT",
+        "trend": "NEUTRAL",
+        "internal_structure": "RANGE",
+        "external_structure": "RANGE",
+        "BOS": false,
+        "CHOCH": false,
+        "liquidity_event": "NONE",
+        "order_block": "NONE",
+        "fair_value_gap": "NONE",
+        "structure_score": 0
+    }
+}

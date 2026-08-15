@@ -1,0 +1,13 @@
+{
+    "engine": "GSIS_RISK_ENGINE_v1.0",
+    "symbol": "BTCUSDT",
+    "risk_status": "BLOCKED",
+    "direction": "NONE",
+    "qualification_score": -50,
+    "risk_percent": 1.0,
+    "risk_reward": 0,
+    "entry": null,
+    "stop_loss": null,
+    "take_profit": null,
+    "timestamp": 1784219796.5169506
+}

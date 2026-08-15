@@ -1,0 +1,20 @@
+{
+    "engine": "GSIS_CONFIRMATION_ENGINE_v6.0",
+    "symbol": "BTCUSDT",
+    "confirmation": "FAILED",
+    "confirmation_score": 35,
+    "execution_permission": "BLOCKED",
+    "checks": {
+        "regime_alignment": "FAIL",
+        "liquidity": "PASS",
+        "orderflow": "PASS",
+        "structure": "FAIL",
+        "displacement": "FAIL"
+    },
+    "evidence": [
+        "LIQUIDITY_EVENT",
+        "ORDERFLOW_CONTROL"
+    ],
+    "regime": "UNKNOWN",
+    "timestamp": 1784218567.734692
+}

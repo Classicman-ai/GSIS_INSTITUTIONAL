@@ -1,0 +1,16 @@
+{
+    "symbol": "BTCUSDT",
+    "institutional_state": "NEUTRAL_RANGE",
+    "institutional_score": -15,
+    "bull_probability": 35,
+    "bear_probability": 65,
+    "execution_permission": "NO_TRADE",
+    "hmm_regime": "MARKDOWN",
+    "liquidity_state": "DUAL_LIQUIDITY_RANGE",
+    "evidence": [
+        "HMM_MARKDOWN",
+        "INTERNAL_BULLISH",
+        "LIQUIDITY_RANGE"
+    ],
+    "timestamp": 1784196248.3780758
+}

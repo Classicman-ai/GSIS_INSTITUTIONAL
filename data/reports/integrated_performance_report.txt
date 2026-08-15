@@ -1,0 +1,52 @@
+******** GSIS PERFORMANCE REPORT ********
+
+ACCOUNT
+
+Starting Equity:
+$100,000
+
+
+Current Equity:
+$247960.0
+
+
+PERFORMANCE
+
+
+Total Profit:
++$111655.0
+
+Win Rate:
+100.0%
+
+Average R:
+1.37R
+
+
+TRADING STATISTICS
+
+
+Total Trades:
+163
+
+Winning Trades:
+163
+
+Losing Trades:
+0
+
+
+BEST TRADE
+
+BTCUSDT BUY
+
+Profit: +$685.0
+
+
+EQUITY STATUS
+
+GSIS EQUITY ENGINE ACTIVE 🛡️
+
+
+Generated:
+2026-07-19T16:16:00.229862

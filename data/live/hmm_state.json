@@ -1,0 +1,25 @@
+{
+    "engine": "HMM",
+    "status": "ACTIVE",
+    "heartbeat": 1784271323.995334,
+    "timestamp": "2026-07-17T06:55:23.995341+00:00",
+    "state": {
+        "symbol": "BTCUSDT",
+        "current_regime": "MARKDOWN",
+        "probabilities": {
+            "ACCUMULATION": 0.095,
+            "MARKUP": 0.095,
+            "DISTRIBUTION": 0.095,
+            "MARKDOWN": 0.524,
+            "RANGE": 0.095,
+            "EXPANSION": 0.095
+        },
+        "confidence": 52.4,
+        "features": {
+            "trend": -0.010566,
+            "volatility": 0.002982,
+            "expansion": 1.435
+        },
+        "bridge_timestamp": 1784271323.9951954
+    }
+}

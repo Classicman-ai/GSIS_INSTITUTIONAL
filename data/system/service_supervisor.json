@@ -1,0 +1,19 @@
+{
+    "system": "ONLINE",
+    "supervisor": "ACTIVE",
+    "engines": {
+        "master_daemon": {
+            "module": "engines.core.gsis_daemon",
+            "status": "READY"
+        },
+        "watchdog": {
+            "module": "engines.system.watchdog_engine",
+            "status": "READY"
+        },
+        "background_guard": {
+            "module": "engines.system.background_guard",
+            "status": "READY"
+        }
+    },
+    "timestamp": "2026-07-19T15:58:33.164998+00:00"
+}

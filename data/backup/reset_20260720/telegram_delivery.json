@@ -1,0 +1,51 @@
+[
+    {
+        "trade_id": "GSIS-TEST-001",
+        "event": "TP4_HIT",
+        "telegram_status": "DELIVERED",
+        "message_id": 999,
+        "timestamp": "2026-07-20T10:21:51.087976+00:00"
+    },
+    {
+        "trade_id": "GSIS-20260719-115301",
+        "event": "TP1_HIT",
+        "telegram_status": "DELIVERED",
+        "message_id": 375,
+        "timestamp": "2026-07-20T10:48:56.890693+00:00"
+    },
+    {
+        "trade_id": "GSIS-20260719-115301",
+        "event": "TP2_HIT",
+        "telegram_status": "DELIVERED",
+        "message_id": 376,
+        "timestamp": "2026-07-20T10:48:57.562947+00:00"
+    },
+    {
+        "trade_id": "GSIS-20260719-115301",
+        "event": "TP3_HIT",
+        "telegram_status": "DELIVERED",
+        "message_id": 377,
+        "timestamp": "2026-07-20T10:48:58.207834+00:00"
+    },
+    {
+        "trade_id": "GSIS-20260719-115301",
+        "event": "TP4_HIT",
+        "telegram_status": "DELIVERED",
+        "message_id": 378,
+        "timestamp": "2026-07-20T10:48:58.993403+00:00"
+    },
+    {
+        "trade_id": "GSIS-20260719-115301",
+        "event": "STOP_MOVED_BREAK_EVEN",
+        "telegram_status": "DELIVERED",
+        "message_id": 379,
+        "timestamp": "2026-07-20T10:48:59.672700+00:00"
+    },
+    {
+        "trade_id": "GSIS-20260719-115301",
+        "event": "TRADE_COMPLETED",
+        "telegram_status": "DELIVERED",
+        "message_id": 380,
+        "timestamp": "2026-07-20T10:49:00.299345+00:00"
+    }
+]

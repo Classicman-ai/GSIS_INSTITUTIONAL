@@ -1,0 +1,14 @@
+{
+    "trade_id": null,
+    "symbol": null,
+    "direction": null,
+    "position_status": "ACTIVE",
+    "tp1": "MONITORED",
+    "tp2": "MONITORED",
+    "tp3": "MONITORED",
+    "tp4": "MONITORED",
+    "stop_loss": "PROTECTED",
+    "break_even": true,
+    "trailing_stop": "READY",
+    "last_update": "2026-07-21T21:39:59.745016+00:00"
+}

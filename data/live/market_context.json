@@ -1,0 +1,11 @@
+{
+    "symbol": "BTCUSDT",
+    "price": 64261.92,
+    "orderflow": "STRONG_BUY_PRESSURE",
+    "delta": 0.34413,
+    "imbalance": 0.274,
+    "strength": "STRONG",
+    "market_bias": "BULLISH",
+    "execution_state": "CONFIRMATION_REQUIRED",
+    "timestamp": 1784187998.9933982
+}

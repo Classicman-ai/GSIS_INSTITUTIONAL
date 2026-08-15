@@ -1,0 +1,9 @@
+{
+    "engine": "GSIS_EXECUTION_BRIDGE_ENGINE_v3.0",
+    "symbol": "BTCUSDT",
+    "execution_status": "BLOCKED",
+    "order_instruction": "NO_ORDER",
+    "direction": "NONE",
+    "risk_status": "BLOCKED",
+    "timestamp": 1784219901.8594372
+}

@@ -1,0 +1,42 @@
+[
+    {
+        "trade_id": "GSIS-20260719-115301",
+        "symbol": "BTCUSDT",
+        "direction": "BUY",
+        "entry": 63990,
+        "exit": 64250,
+        "r_multiple": 1.37,
+        "profit": 685.0,
+        "timestamp": "2026-07-19T12:41:58.116389+00:00"
+    },
+    {
+        "trade_id": "GSIS-20260719-125023",
+        "symbol": "BTCUSDT",
+        "direction": "BUY",
+        "entry": 63990,
+        "exit": 64250,
+        "r_multiple": 1.37,
+        "profit": 685.0,
+        "timestamp": "2026-07-19T12:50:23.576374+00:00"
+    },
+    {
+        "trade_id": "GSIS-20260719-125222",
+        "symbol": "BTCUSDT",
+        "direction": "BUY",
+        "entry": 63990,
+        "exit": 64250,
+        "r_multiple": 1.37,
+        "profit": 685.0,
+        "timestamp": "2026-07-19T12:52:22.827445+00:00"
+    },
+    {
+        "trade_id": "GSIS-20260719-130130",
+        "symbol": "BTCUSDT",
+        "direction": "BUY",
+        "entry": 63990,
+        "exit": 64250,
+        "r_multiple": 1.37,
+        "profit": 685.0,
+        "timestamp": "2026-07-19T14:00:55.450448+00:00"
+    }
+]

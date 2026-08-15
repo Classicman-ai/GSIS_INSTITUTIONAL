@@ -1,0 +1,19 @@
+{
+    "symbol": "BTCUSDT",
+    "4H_bias": "BEARISH",
+    "1H_bias": "BULLISH",
+    "15M_structure": {
+        "BOS": false,
+        "CHOCH": false,
+        "direction": "NONE"
+    },
+    "5M_structure": {
+        "BOS": false,
+        "CHOCH": false,
+        "direction": "NONE"
+    },
+    "liquidity": "NONE",
+    "FVG": null,
+    "confidence": 0,
+    "timestamp": 1784192468.592081
+}
