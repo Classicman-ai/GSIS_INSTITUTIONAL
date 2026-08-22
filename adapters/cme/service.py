@@ -46,9 +46,9 @@ class CMEIntelligenceService:
     """
     External-data orchestration boundary for CME intelligence.
 
-    It receives all observations from DatabentoCMEDataSource and passes them
-    into the pure CMEMarketMicrostructureEngine. No market data is generated
-    or embedded here.
+    MBP-10 is a current-depth observation, so the service keeps the latest
+    externally supplied levels per instrument/depth instead of accumulating
+    historical levels as if they were simultaneous liquidity.
     """
 
     def __init__(
@@ -61,7 +61,7 @@ class CMEIntelligenceService:
             raise ValueError("buffer_size must be > 0")
         self.source = source
         self.engine = engine
-        self.levels: deque[CMEBookLevel] = deque(maxlen=buffer_size)
+        self._levels: dict[tuple[int, str, int], CMEBookLevel] = {}
         self.events: deque[CMEBookEvent] = deque(maxlen=buffer_size)
         self.trades: deque[CMETrade] = deque(maxlen=buffer_size)
         self.latest_signal: CMEMicrostructureSignal | None = None
@@ -70,8 +70,13 @@ class CMEIntelligenceService:
         source.on_book_event = self._on_book_event
         source.on_trade = self._on_trade
 
+    @property
+    def levels(self) -> tuple[CMEBookLevel, ...]:
+        return tuple(self._levels.values())
+
     def _on_book_level(self, value: CMEBookLevel) -> None:
-        self.levels.append(value)
+        key = (value.instrument_id, value.side, value.depth)
+        self._levels[key] = value
         self._recalculate()
 
     def _on_book_event(self, value: CMEBookEvent) -> None:
@@ -83,7 +88,7 @@ class CMEIntelligenceService:
         self._recalculate()
 
     def _recalculate(self) -> None:
-        if not self.levels and not self.events and not self.trades:
+        if not self._levels and not self.events and not self.trades:
             return
         self.latest_signal = self.engine.analyze(
             levels=self.levels,
