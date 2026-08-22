@@ -18,7 +18,7 @@ jobs:
         run: python -m pip install --upgrade pip pytest
       - name: Compile Python sources
         run: python -m compileall -q .
-      - name: Run deterministic integration tests
-        run: pytest -q tests/test_end_to_end_wiring.py
+      - name: Run canonical and deterministic integration tests
+        run: pytest -q tests/test_canonical_trading_path.py tests/test_end_to_end_wiring.py
       - name: Run static GSIS certification
         run: python gsis_certification.py
