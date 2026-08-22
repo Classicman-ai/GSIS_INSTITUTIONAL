@@ -10,8 +10,8 @@ venv/
 
 .vscode/
 .idea/
-
 .DS_Store
-.env
-__pycache__/
-*.pyc
+
+database/*.db
+database/*.sqlite
+data/
