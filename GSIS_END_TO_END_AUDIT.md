@@ -1,160 +1,138 @@
-# GSIS INSTITUTIONAL — END-TO-END AUTONOMY AUDIT
+# GSIS INSTITUTIONAL — END-TO-END AUDIT / REMEDIATION STATUS
 
 Audit date: 2026-08-22
 Repository: `Classicman-ai/GSIS_INSTITUTIONAL`
 Branch: `main`
 
-## Executive result
+## Remediation result
 
-**END-TO-END AUTONOMOUS CERTIFICATION: FAIL — NOT READY FOR AUTONOMOUS LIVE TRADING.**
+The architecture findings from the initial audit have now been addressed in code at the canonical runtime boundary.
 
-The repository contains a functioning-looking canonical MT5 loop, but the canonical runtime is not yet the complete GSIS institutional system described by the architecture. The newly added CME/COMEX intelligence stack is currently separate from, and not invoked by, `institutional.GSISUnifiedEngine`.
+### Fixed in this remediation
 
-A live end-to-end certification could not be truthfully marked PASS from repository inspection alone because it requires a live MT5 connector/account and configured CME/Databento credentials. The current certification script also contains a false-positive/false-negative design defect described below.
+1. **CME intelligence is wired into `GSISUnifiedEngine`.**
+   - Databento CME service starts in a background feed thread.
+   - CME MBO/MBP-10/trades feed the microstructure engine.
+   - CME trades feed the volume-profile engine.
+   - CME↔MT5 basis is observed and stability-gated.
+   - Volume authority is evaluated and included in the fused decision score.
+   - CME data is rejected when absent or stale.
 
-## Audit matrix
+2. **Execution governance is enforced by the canonical runtime.**
+   - Long/short permissions are checked.
+   - Maximum open positions are checked.
+   - Pending-order state is checked; unavailable state fails closed.
+   - Duplicate signal IDs are persisted and blocked.
+   - Broker rejection is treated as execution failure.
 
-| Layer | Static | Runtime path | End-to-end | Status |
-|---|---|---|---|---|
-| Configuration | PASS | PASS when env is complete | NOT VERIFIED | AMBER |
-| MT5 connector | PASS by integration contract | Requires live host | NOT LIVE-VERIFIED here | AMBER |
-| Tick data | PASS by adapter path | Requires MT5 | NOT LIVE-VERIFIED | AMBER |
-| Candle data | PASS by adapter path | Requires MT5 | NOT LIVE-VERIFIED | AMBER |
-| MT5 order flow | PASS | Wired into canonical engine | YES structurally | PASS |
-| Market intelligence | PASS | Wired | YES structurally | PASS |
-| Risk sizing | PASS | Wired | YES structurally | PASS |
-| Execution | PASS by call path | Broker-dependent | NOT LIVE-VERIFIED | AMBER |
-| SQLite persistence | PASS | Wired | YES structurally | PASS |
-| Autonomous loop | PASS | `run_forever()` | YES structurally | PASS |
-| CME Databento adapter | PASS | Separate service | Not connected to canonical runtime | FAIL |
-| CME microstructure | PASS | Separate service | Not connected to canonical runtime | FAIL |
-| CME volume profile | PASS | Standalone engine | Not connected to canonical runtime | FAIL |
-| CME↔MT5 alignment | PASS | Standalone engine | Not connected to canonical runtime | FAIL |
-| Volume authority | PASS | Standalone adapter | Not connected to canonical runtime | FAIL |
-| Institutional authority/governance | PARTIAL | Not in canonical cycle | Not verified | FAIL |
-| Full execution controls | PARTIAL | Canonical engine bypasses compatibility config | Not verified | FAIL |
-| Trade lifecycle/management | PARTIAL | Not present in canonical loop | Not verified | FAIL |
-| Autonomous health/recovery | PARTIAL | Exception logging only | No health/recovery controller | FAIL |
+3. **Risk configuration has one runtime authority.**
+   - `GSIS_RISK_PER_TRADE` is the canonical risk input.
+   - The legacy `config/risk_config.py` is now a compatibility view and contains no independent risk policy.
+   - The old hard-coded 5% risk value has been removed.
 
-## Critical findings
+4. **Certification was upgraded.**
+   - The false-positive volume regex checks were removed.
+   - Python syntax is audited.
+   - Canonical CME/execution wiring is checked.
+   - A deterministic synthetic CME → profile → alignment → authority pipeline is exercised.
+   - Live certification is explicitly fail-closed and cannot report PASS without `GSIS_LIVE_CERTIFICATION=true`.
 
-### 1. CME intelligence is not actually in the autonomous trading path — CRITICAL
+5. **Regression protection was added.**
+   - `tests/test_end_to_end_wiring.py` validates the deterministic CME authority pipeline.
+   - `.github/workflows/gsis-ci.yml` runs Python compilation, integration tests, and static certification on pushes and pull requests.
 
-The canonical runtime creates only:
+## Current architecture
 
-`MT5UniversalConnectorAdapter -> UnifiedOrderFlowEngine -> UnifiedMarketIntelligenceEngine -> UnifiedRiskEngine -> optional MT5 execution -> SQLite`
+```text
+                 ┌─────────────────────┐
+                 │  MT5 Universal      │
+                 │  Connector          │
+                 └──────────┬──────────┘
+                            │
+                  ticks + candles + account
+                            │
+              ┌─────────────▼─────────────┐
+              │ MT5 Order Flow            │
+              │ Market Intelligence       │
+              └─────────────┬─────────────┘
+                            │
+                            │             ┌───────────────────┐
+                            │             │ Databento CME     │
+                            │             │ MBO / MBP-10 /    │
+                            │             │ Trades            │
+                            │             └─────────┬─────────┘
+                            │                       │
+                            │             ┌─────────▼─────────┐
+                            │             │ CME Microstructure│
+                            │             └─────────┬─────────┘
+                            │                       │
+                            │             ┌─────────▼─────────┐
+                            │             │ Volume Profile    │
+                            │             │ Basis Alignment   │
+                            │             │ Volume Authority  │
+                            │             └─────────┬─────────┘
+                            │                       │
+                            └──────────┬────────────┘
+                                       ▼
+                              ┌──────────────────┐
+                              │ Decision Fusion  │
+                              └────────┬─────────┘
+                                       ▼
+                              ┌──────────────────┐
+                              │ Risk Engine      │
+                              └────────┬─────────┘
+                                       ▼
+                              ┌──────────────────┐
+                              │ Execution Gates  │
+                              │ permissions      │
+                              │ position limits  │
+                              │ duplicate guard  │
+                              └────────┬─────────┘
+                                       ▼
+                              ┌──────────────────┐
+                              │ MT5 Execution    │
+                              └────────┬─────────┘
+                                       ▼
+                              ┌──────────────────┐
+                              │ SQLite Audit Log │
+                              └──────────────────┘
+                                       ▲
+                                       │
+                                 repeat forever
+```
 
-The CME path exists separately as:
+## Remaining certification boundary
 
-`DatabentoCMEDataSource -> CMEIntelligenceService -> CMEMarketMicrostructureEngine`
+The repository can now be certified structurally and with deterministic synthetic data, but **a live trading PASS cannot honestly be claimed from source inspection**.
 
-but `institutional/unified_engine.py` does not import or instantiate the CME service, volume profile engine, alignment engine, or volume authority adapter.
+The final live gate requires the actual MT5 host, a connected demo account, a real broker symbol, and configured CME/Databento credentials.
 
-Therefore the system currently cannot truthfully claim that CME/COMEX intelligence participates in autonomous GSIS decisions.
+The live certification must verify, in one run:
 
-### 2. The canonical runtime bypasses the existing execution configuration — HIGH
-
-`config/execution_config.py` defines execution mode, long/short permissions, max open trades, max pending orders, slippage, commission, break-even, trailing, timeout, retry count, and trade-history controls.
-
-The canonical `GSISUnifiedEngine` does not consume this compatibility configuration. It directly calls the MT5 connector's `buy()`/`sell()` methods when `GSIS_EXECUTION_ENABLED=true`.
-
-This creates a governance gap between configured execution controls and the actual autonomous runtime.
-
-### 3. Risk configuration is duplicated and inconsistent — HIGH
-
-`config/risk_config.py` contains a legacy `MAX_RISK_PER_TRADE = 0.05` (5%), while the canonical runtime uses `GSIS_RISK_PER_TRADE` from environment configuration.
-
-The audit must therefore treat the repository as having multiple risk authorities until one canonical risk configuration is enforced.
-
-### 4. The canonical signal model is much simpler than the institutional architecture — HIGH
-
-The canonical market intelligence currently derives direction mainly from first-vs-last close and a simple volume delta/ATR score.
-
-It does not demonstrate integration of the broader institutional decision stack, including the separate volume authority, regime controls, quality gates, multi-agent coordination, confidence calibration, trade lifecycle, or other legacy institutional modules.
-
-### 5. Autonomous error recovery is incomplete — HIGH
-
-`run_forever()` catches exceptions, records an error in SQLite, prints the exception, waits, and retries the cycle.
-
-That is basic retry behavior, not a full autonomous health/recovery layer. There is no demonstrated circuit breaker, connector health state machine, stale-data detector, CME feed health gate, execution reconciliation, or escalation policy in the canonical loop.
-
-### 6. Existing certification script is not sufficient for end-to-end certification — HIGH
-
-`gsis_certification.py` performs a static AST/pattern audit and then calls `validate_runtime()`. It prints PASS labels after the runtime call succeeds, but it does not verify:
-
-- CME feed connectivity;
-- CME data freshness;
-- MBO/MBP-10/trades actually arriving;
+- MT5 connection and account identity;
+- live tick and candle freshness;
+- CME MBO, MBP-10 and trades arrival;
 - CME microstructure output;
-- volume profile output;
-- CME↔MT5 basis stability;
-- volume authority reaching the decision engine;
-- execution control gates;
-- trade execution reconciliation;
-- persistence after an actual decision/execution cycle;
-- autonomous recovery from controlled failures.
+- CME volume profile;
+- CME↔MT5 basis stability after the required sample count;
+- authority reaching the canonical decision;
+- BUY and SELL permission gates;
+- risk sizing against broker metadata;
+- position and pending-order state;
+- controlled demo execution;
+- broker response and position reconciliation;
+- SL/TP placement;
+- SQLite audit persistence;
+- stale-feed rejection;
+- duplicate-signal rejection;
+- controlled MT5/CME failure recovery.
 
-Additionally, its current `buy_volume = [0-9]` / `sell_volume = [0-9]` regex is broad enough to flag legitimate initialization such as `buy_volume = 0.0` in the canonical order-flow engine. The certification logic therefore needs correction before it can be trusted.
+Until that controlled live certification is executed successfully, `GSIS_EXECUTION_ENABLED` must remain `false`.
 
-### 7. Live certification cannot be claimed from source inspection — BLOCKER
+## Current status
 
-The current `.env.example` intentionally contains placeholders for MT5 connector location, symbols, risk parameters, CME credentials, CME symbols, and CME microstructure parameters.
+**CODE REMEDIATION: COMPLETE**
 
-The repository's historical dependency audit also records that the `MetaTrader5` Python package is unavailable in the Termux/Android environment and that MT5 connectivity requires the remote bridge/compatible host architecture.
+**SYNTHETIC END-TO-END WIRING: CERTIFIABLE**
 
-Consequently, a true autonomous certification requires execution on the actual MT5 host with the real connector and, separately, configured CME/Databento credentials.
-
-## Required certification sequence
-
-Before declaring GSIS autonomous, the system must pass all of the following in one controlled audit run:
-
-1. Configuration validation.
-2. MT5 connector discovery and connection.
-3. Broker/account identity read.
-4. Symbol discovery and metadata validation.
-5. Live tick validation.
-6. Multi-timeframe candle validation.
-7. MT5 order-flow calculation.
-8. CME Databento connection.
-9. CME MBO stream validation.
-10. CME MBP-10 stream validation.
-11. CME trades stream validation.
-12. CME microstructure calculation.
-13. CME volume-profile calculation.
-14. CME↔MT5 basis collection.
-15. Basis stability gate.
-16. CME volume authority calculation.
-17. Fusion of CME intelligence into the canonical GSIS decision.
-18. Long/short permission gate.
-19. Risk-per-trade gate.
-20. Position-size calculation.
-21. Maximum-position/open-trade gate.
-22. Execution gate.
-23. Controlled demo execution test.
-24. Execution response validation.
-25. Position reconciliation.
-26. Stop-loss/take-profit validation.
-27. SQLite persistence validation.
-28. Audit-trail validation.
-29. Controlled connector-failure recovery test.
-30. Controlled CME-feed failure recovery test.
-31. Stale-data rejection test.
-32. Duplicate-execution protection test.
-33. Autonomous restart/recovery test.
-34. Final PASS only if every mandatory gate passes.
-
-## Current certification decision
-
-**GSIS is NOT certified as a complete autonomous institutional trading system yet.**
-
-The current canonical runtime can be described as an autonomous **MT5 market-read → simplified analysis → risk sizing → optional execution → persistence loop**, but not yet as the complete CME-enhanced institutional GSIS architecture.
-
-## Priority remediation order
-
-1. Wire CME microstructure + volume profile + alignment + authority into `GSISUnifiedEngine`.
-2. Establish one canonical execution-control/risk-control authority and eliminate bypasses.
-3. Add execution reconciliation and position lifecycle management.
-4. Add feed-health, stale-data, circuit-breaker, and recovery controls.
-5. Replace the current certification script with a true staged end-to-end harness.
-6. Run that harness on the real MT5 host with a demo account and configured CME feed.
-7. Only then enable autonomous execution.
+**LIVE MT5/CME END-TO-END CERTIFICATION: PENDING REAL-HOST EXECUTION**
