@@ -1,31 +1,29 @@
-"""Compatibility execution configuration.
-
-Execution values are supplied by the canonical GSIS runtime environment.
-"""
+"""Compatibility execution configuration loaded entirely from the environment."""
 
 import os
 
 
-EXECUTION_MODE = os.environ.get("GSIS_EXECUTION_MODE", "LIVE")
-EXECUTION_ENABLED = os.environ.get("GSIS_EXECUTION_ENABLED", "false").lower() == "true"
+def required(name: str) -> str:
+    value = os.environ.get(name, "").strip()
+    if not value:
+        raise RuntimeError(f"Missing required execution configuration: {name}")
+    return value
 
-DEFAULT_ORDER_TYPE = os.environ.get("GSIS_ORDER_TYPE", "MARKET")
-ALLOW_LONG = os.environ.get("GSIS_ALLOW_LONG", "true").lower() == "true"
-ALLOW_SHORT = os.environ.get("GSIS_ALLOW_SHORT", "true").lower() == "true"
 
-MAX_OPEN_TRADES = int(os.environ["GSIS_MAX_OPEN_TRADES"])
-MAX_PENDING_ORDERS = int(os.environ["GSIS_MAX_PENDING_ORDERS"])
-
-SLIPPAGE = float(os.environ["GSIS_SLIPPAGE"])
-COMMISSION = float(os.environ["GSIS_COMMISSION"])
-
-ENABLE_BREAK_EVEN = os.environ.get("GSIS_ENABLE_BREAK_EVEN", "true").lower() == "true"
-ENABLE_TRAILING_STOP = os.environ.get("GSIS_ENABLE_TRAILING_STOP", "true").lower() == "true"
-BREAK_EVEN_AFTER = os.environ["GSIS_BREAK_EVEN_AFTER"]
-TRAIL_AFTER = os.environ["GSIS_TRAIL_AFTER"]
-
-TIMEOUT_SECONDS = float(os.environ["GSIS_EXECUTION_TIMEOUT_SECONDS"])
-RETRY_COUNT = int(os.environ["GSIS_EXECUTION_RETRY_COUNT"])
-
-SAVE_EXECUTION_LOG = os.environ.get("GSIS_SAVE_EXECUTION_LOG", "true").lower() == "true"
-SAVE_TRADE_HISTORY = os.environ.get("GSIS_SAVE_TRADE_HISTORY", "true").lower() == "true"
+EXECUTION_MODE = required("GSIS_EXECUTION_MODE")
+EXECUTION_ENABLED = required("GSIS_EXECUTION_ENABLED").lower() == "true"
+DEFAULT_ORDER_TYPE = required("GSIS_ORDER_TYPE")
+ALLOW_LONG = required("GSIS_ALLOW_LONG").lower() == "true"
+ALLOW_SHORT = required("GSIS_ALLOW_SHORT").lower() == "true"
+MAX_OPEN_TRADES = int(required("GSIS_MAX_OPEN_TRADES"))
+MAX_PENDING_ORDERS = int(required("GSIS_MAX_PENDING_ORDERS"))
+SLIPPAGE = float(required("GSIS_SLIPPAGE"))
+COMMISSION = float(required("GSIS_COMMISSION"))
+ENABLE_BREAK_EVEN = required("GSIS_ENABLE_BREAK_EVEN").lower() == "true"
+ENABLE_TRAILING_STOP = required("GSIS_ENABLE_TRAILING_STOP").lower() == "true"
+BREAK_EVEN_AFTER = required("GSIS_BREAK_EVEN_AFTER")
+TRAIL_AFTER = required("GSIS_TRAIL_AFTER")
+TIMEOUT_SECONDS = float(required("GSIS_EXECUTION_TIMEOUT_SECONDS"))
+RETRY_COUNT = int(required("GSIS_EXECUTION_RETRY_COUNT"))
+SAVE_EXECUTION_LOG = required("GSIS_SAVE_EXECUTION_LOG").lower() == "true"
+SAVE_TRADE_HISTORY = required("GSIS_SAVE_TRADE_HISTORY").lower() == "true"
