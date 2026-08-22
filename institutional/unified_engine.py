@@ -49,44 +49,42 @@ class GSISConfig:
             if not value:
                 raise RuntimeError(f"Missing required environment variable: {name}")
             return value
-
         def optional(name: str, default: str) -> str:
             return os.getenv(name, default).strip()
-
         def csv(name: str) -> tuple[str, ...]:
             values = tuple(x.strip().upper() for x in required(name).split(",") if x.strip())
             if not values:
                 raise RuntimeError(f"{name} must contain at least one value")
             return values
-
         def positive_float(name: str, default: Optional[str] = None) -> float:
             raw = required(name) if default is None else optional(name, default)
             value = float(raw)
             if not math.isfinite(value) or value <= 0:
                 raise RuntimeError(f"{name} must be a finite positive number")
             return value
-
         def positive_int(name: str, default: Optional[str] = None) -> int:
             raw = required(name) if default is None else optional(name, default)
             value = int(raw)
             if value <= 0:
                 raise RuntimeError(f"{name} must be a positive integer")
             return value
-
+        def nonnegative_int(name: str, default: str) -> int:
+            value = int(optional(name, default))
+            if value < 0:
+                raise RuntimeError(f"{name} must be >= 0")
+            return value
         def boolean(name: str, default: Optional[str] = None) -> bool:
             value = (required(name) if default is None else optional(name, default)).lower()
             if value not in {"true", "false"}:
                 raise RuntimeError(f"{name} must be true or false")
             return value == "true"
-
         connector_path = Path(required("GSIS_MT5_CONNECTOR_PATH")).expanduser().resolve()
         if not connector_path.exists():
             raise RuntimeError(f"MT5 connector path does not exist: {connector_path}")
-
         risk = positive_float("GSIS_RISK_PER_TRADE")
         if risk > 1.0:
             raise RuntimeError("GSIS_RISK_PER_TRADE must be <= 1.0")
-
+        retry_count = nonnegative_int("GSIS_EXECUTION_RETRY_COUNT", "1")
         return cls(
             symbols=csv("GSIS_SYMBOLS"),
             timeframes=csv("GSIS_TIMEFRAMES"),
@@ -102,11 +100,11 @@ class GSISConfig:
             allow_long=boolean("GSIS_ALLOW_LONG", "true"),
             allow_short=boolean("GSIS_ALLOW_SHORT", "true"),
             max_open_trades=positive_int("GSIS_MAX_OPEN_TRADES", "3"),
-            max_pending_orders=positive_int("GSIS_MAX_PENDING_ORDERS", "0") if optional("GSIS_MAX_PENDING_ORDERS", "0") != "0" else 0,
+            max_pending_orders=nonnegative_int("GSIS_MAX_PENDING_ORDERS", "0"),
             execution_mode=optional("GSIS_EXECUTION_MODE", "MARKET"),
             order_type=optional("GSIS_ORDER_TYPE", "MARKET"),
             execution_timeout_seconds=positive_float("GSIS_EXECUTION_TIMEOUT_SECONDS", "10"),
-            execution_retry_count=int(optional("GSIS_EXECUTION_RETRY_COUNT", "1")),
+            execution_retry_count=retry_count,
             cme_enabled=boolean("GSIS_CME_ENABLED", "true"),
             cme_start=os.getenv("GSIS_CME_START", "").strip() or None,
             cme_snapshot=boolean("GSIS_CME_SNAPSHOT", "true"),
@@ -118,74 +116,60 @@ class GSISConfig:
 
 class MT5UniversalConnectorAdapter:
     """Broker-neutral adapter. The connector remains the only MT5 integration boundary."""
-
     def __init__(self, connector_path: Path) -> None:
         path = str(connector_path)
         if path not in sys.path:
             sys.path.insert(0, path)
         module = importlib.import_module("connector.mt5_connector")
         self.connector = module.MT5Connector()
-
     def connect(self) -> None:
         if not self.connector.connect():
             raise RuntimeError(f"MT5 connection failed: {self.connector.last_error}")
-
     def tick(self, symbol: str) -> dict[str, Any]:
         value = self.connector.get_tick(symbol)
         if value is None:
             raise RuntimeError(f"Live tick unavailable for {symbol}: {self.connector.last_error}")
         return value
-
     def rates(self, symbol: str, timeframe: str, count: int) -> Any:
         value = self.connector.get_rates(symbol, timeframe, count)
         if value is None or len(value) == 0:
             raise RuntimeError(f"Live historical data unavailable for {symbol}/{timeframe}: {self.connector.last_error}")
         return value
-
     def account(self) -> dict[str, Any]:
         value = self.connector.get_account_info()
         if value is None:
             raise RuntimeError(f"Account data unavailable: {self.connector.last_error}")
         return value
-
     def symbol_info(self, symbol: str) -> dict[str, Any]:
         value = self.connector.get_symbol_info(symbol)
         if value is None:
             raise RuntimeError(f"Symbol metadata unavailable for {symbol}: {self.connector.last_error}")
         return value
-
     def status(self) -> dict[str, Any]:
         return self.connector.status()
-
     def execute(self, symbol: str, side: str, volume: float, sl: float, tp: float) -> dict[str, Any]:
         if side == "BUY":
             return self.connector.buy(symbol, volume, sl=sl, tp=tp)
         if side == "SELL":
             return self.connector.sell(symbol, volume, sl=sl, tp=tp)
         raise ValueError(f"Unsupported execution side: {side}")
-
     def open_positions(self) -> Optional[list[Any]]:
         for name in ("get_positions", "positions", "get_open_positions"):
             method = getattr(self.connector, name, None)
             if callable(method):
                 value = method()
-                if value is None:
-                    return []
-                return list(value)
+                return [] if value is None else list(value)
         status = self.status()
         for key in ("positions", "open_positions"):
             if key in status and status[key] is not None:
                 return list(status[key])
         return None
-
     def pending_orders(self) -> Optional[list[Any]]:
         for name in ("get_pending_orders", "pending_orders", "orders"):
             method = getattr(self.connector, name, None)
             if callable(method):
                 value = method()
-                if value is None:
-                    return []
-                return list(value)
+                return [] if value is None else list(value)
         status = self.status()
         for key in ("pending_orders", "orders"):
             if key in status and status[key] is not None:
@@ -195,7 +179,6 @@ class MT5UniversalConnectorAdapter:
 
 class UnifiedOrderFlowEngine:
     name = "GSIS_UNIFIED_ORDER_FLOW"
-
     def calculate(self, rates: Any) -> dict[str, Any]:
         rows = list(rates)
         if len(rows) < 2:
@@ -211,34 +194,22 @@ class UnifiedOrderFlowEngine:
             volume = float(row[volume_field])
             ranges.append(max(high - low, 0.0))
             if closing > opening:
-                buy_volume += volume
-                bullish += 1
+                buy_volume += volume; bullish += 1
             elif closing < opening:
-                sell_volume += volume
-                bearish += 1
+                sell_volume += volume; bearish += 1
             else:
-                buy_volume += volume / 2.0
-                sell_volume += volume / 2.0
+                buy_volume += volume / 2.0; sell_volume += volume / 2.0
         total = buy_volume + sell_volume
         if total <= 0:
             raise RuntimeError("Broker supplied candles contain no usable volume")
         latest = rows[-1]
         latest_range = max(float(latest["high"]) - float(latest["low"]), 0.0)
         latest_body = abs(float(latest["close"]) - float(latest["open"]))
-        return {
-            "buy_volume": buy_volume,
-            "sell_volume": sell_volume,
-            "delta": (buy_volume - sell_volume) / total,
-            "bullish_candles": bullish,
-            "bearish_candles": bearish,
-            "average_range": mean(ranges),
-            "body_strength": latest_body / latest_range if latest_range > 0 else 0.0,
-        }
+        return {"buy_volume": buy_volume, "sell_volume": sell_volume, "delta": (buy_volume - sell_volume) / total, "bullish_candles": bullish, "bearish_candles": bearish, "average_range": mean(ranges), "body_strength": latest_body / latest_range if latest_range > 0 else 0.0}
 
 
 class UnifiedMarketIntelligenceEngine:
     name = "GSIS_UNIFIED_MARKET_INTELLIGENCE"
-
     def analyze(self, rates: Any, order_flow: dict[str, Any]) -> dict[str, Any]:
         rows = list(rates)
         closes = [float(row["close"]) for row in rows]
@@ -253,20 +224,11 @@ class UnifiedMarketIntelligenceEngine:
         score = abs(order_flow["delta"])
         if movement > atr and atr > 0:
             score += movement / atr
-        return {
-            "direction": direction,
-            "first_close": first,
-            "last_close": last,
-            "movement": movement,
-            "atr": atr,
-            "score": score,
-            "order_flow": order_flow,
-        }
+        return {"direction": direction, "first_close": first, "last_close": last, "movement": movement, "atr": atr, "score": score, "order_flow": order_flow}
 
 
 class UnifiedRiskEngine:
     name = "GSIS_UNIFIED_RISK"
-
     def size(self, account: dict[str, Any], symbol_info: dict[str, Any], entry: float, stop: float, risk_fraction: float) -> float:
         equity = float(account.get("equity") or 0.0)
         tick_size = float(symbol_info.get("trade_tick_size") or 0.0)
@@ -279,8 +241,7 @@ class UnifiedRiskEngine:
             raise RuntimeError("Broker risk metadata is insufficient for position sizing")
         if volume_min <= 0 or volume_max <= 0 or volume_step <= 0:
             raise RuntimeError("Broker volume constraints are unavailable")
-        risk_amount = equity * risk_fraction
-        raw_volume = risk_amount / ((distance / tick_size) * tick_value)
+        raw_volume = (equity * risk_fraction) / ((distance / tick_size) * tick_value)
         volume = min(math.floor(raw_volume / volume_step) * volume_step, volume_max)
         if volume < volume_min:
             raise RuntimeError("Calculated position is below the broker minimum volume")
@@ -296,25 +257,18 @@ class UnifiedPersistence:
         self.connection.execute("CREATE TABLE IF NOT EXISTS gsis_cycles (id INTEGER PRIMARY KEY AUTOINCREMENT, timestamp TEXT NOT NULL, symbol TEXT NOT NULL, status TEXT NOT NULL, payload TEXT NOT NULL)")
         self.connection.execute("CREATE TABLE IF NOT EXISTS gsis_execution_guard (signal_id TEXT PRIMARY KEY, timestamp TEXT NOT NULL, symbol TEXT NOT NULL, timeframe TEXT NOT NULL, side TEXT NOT NULL, result TEXT NOT NULL)")
         self.connection.commit()
-
     def record(self, symbol: str, status: str, payload: dict[str, Any]) -> None:
         self.connection.execute("INSERT INTO gsis_cycles(timestamp, symbol, status, payload) VALUES(?,?,?,?)", (datetime.now(timezone.utc).isoformat(), symbol, status, json.dumps(payload, default=str)))
         self.connection.commit()
-
     def already_executed(self, signal_id: str) -> bool:
-        row = self.connection.execute("SELECT 1 FROM gsis_execution_guard WHERE signal_id=?", (signal_id,)).fetchone()
-        return row is not None
-
+        return self.connection.execute("SELECT 1 FROM gsis_execution_guard WHERE signal_id=?", (signal_id,)).fetchone() is not None
     def mark_executed(self, signal_id: str, symbol: str, timeframe: str, side: str, result: dict[str, Any]) -> None:
         self.connection.execute("INSERT OR IGNORE INTO gsis_execution_guard(signal_id,timestamp,symbol,timeframe,side,result) VALUES(?,?,?,?,?,?)", (signal_id, datetime.now(timezone.utc).isoformat(), symbol, timeframe, side, json.dumps(result, default=str)))
         self.connection.commit()
 
 
 class GSISUnifiedEngine:
-    """Canonical autonomous runtime: MT5 + CME intelligence -> authority -> risk -> governed execution -> audit."""
-
     name = "GSIS_INSTITUTIONAL_UNIFIED_ENGINE"
-
     def __init__(self, config: GSISConfig) -> None:
         self.config = config
         self.market = MT5UniversalConnectorAdapter(config.mt5_connector_path)
@@ -329,7 +283,6 @@ class GSISUnifiedEngine:
         self.cme_thread = None
         self.cme_error: Optional[str] = None
         self._setup_cme()
-
     def _setup_cme(self) -> None:
         if not self.config.cme_enabled:
             return
@@ -343,7 +296,6 @@ class GSISUnifiedEngine:
         except Exception as exc:
             self.cme_error = f"{type(exc).__name__}: {exc}"
             raise RuntimeError(f"CME intelligence initialization failed: {self.cme_error}") from exc
-
     def _start_cme(self) -> None:
         if not self.cme_service or self.cme_thread is not None:
             return
@@ -355,7 +307,6 @@ class GSISUnifiedEngine:
                 self.cme_error = f"{type(exc).__name__}: {exc}"
         self.cme_thread = threading.Thread(target=runner, name="gsis-cme-feed", daemon=True)
         self.cme_thread.start()
-
     def _cme_snapshot(self, mt5_price: float, symbol: str, timeframe: str) -> dict[str, Any]:
         if not self.cme_service or not self.volume_profile or not self.alignment or not self.volume_authority:
             return {"enabled": False, "status": "DISABLED"}
@@ -368,21 +319,11 @@ class GSISUnifiedEngine:
         if age > self.config.cme_max_age_seconds:
             return {"enabled": True, "status": "STALE_CME_DATA", "age_seconds": age, "microstructure": signal.__dict__}
         from volume_intelligence import MarketTrade
-        market_trades = [MarketTrade(t.timestamp, t.price, t.quantity, t.aggressor_side) for t in trades]
-        profile = self.volume_profile.build(market_trades, source="CME_COMEX", symbol=symbol, timeframe=timeframe)
+        profile = self.volume_profile.build([MarketTrade(t.timestamp, t.price, t.quantity, t.aggressor_side) for t in trades], "CME_COMEX", symbol, timeframe)
         basis = self.alignment.observe(datetime.now(timezone.utc), latest_cme.price, mt5_price)
         aligned = self.alignment.align(profile, basis)
         authority = self.volume_authority.evaluate(profile, aligned, mt5_price)
-        return {
-            "enabled": True,
-            "status": "ALIGNED" if aligned.aligned else aligned.status,
-            "age_seconds": age,
-            "microstructure": signal.__dict__,
-            "profile": {"poc": profile.poc, "vah": profile.vah, "val": profile.val, "delta": profile.net_delta, "quality": profile.quality},
-            "alignment": aligned.__dict__,
-            "authority": authority.__dict__,
-        }
-
+        return {"enabled": True, "status": "ALIGNED" if aligned.aligned else aligned.status, "age_seconds": age, "microstructure": signal.__dict__, "profile": {"poc": profile.poc, "vah": profile.vah, "val": profile.val, "delta": profile.net_delta, "quality": profile.quality}, "alignment": aligned.__dict__, "authority": authority.__dict__}
     @staticmethod
     def _direction_score(intelligence: dict[str, Any], cme: dict[str, Any]) -> tuple[str, float]:
         direction = intelligence["direction"]
@@ -402,17 +343,13 @@ class GSISUnifiedEngine:
             else:
                 score -= abs(float(micro.get("score", 0.0))) / 20.0
         return direction, score
-
     def validate_runtime(self) -> dict[str, Any]:
         self.market.connect()
         account = self.market.account()
-        symbols = {}
-        for symbol in self.config.symbols:
-            symbols[symbol] = {"tick": self.market.tick(symbol), "symbol_info": self.market.symbol_info(symbol)}
+        symbols = {symbol: {"tick": self.market.tick(symbol), "symbol_info": self.market.symbol_info(symbol)} for symbol in self.config.symbols}
         if self.config.cme_enabled:
             self._start_cme()
         return {"engine": self.name, "connector": self.market.status(), "account": account, "symbols": symbols, "execution_enabled": self.config.execution_enabled, "cme_enabled": self.config.cme_enabled, "status": "READY"}
-
     def _execution_guard(self, side: str) -> None:
         if side == "BUY" and not self.config.allow_long:
             raise RuntimeError("LONG_EXECUTION_DISABLED")
@@ -426,9 +363,8 @@ class GSISUnifiedEngine:
             raise RuntimeError("MAX_OPEN_TRADES_REACHED")
         if pending is None:
             raise RuntimeError("PENDING_ORDER_STATE_UNAVAILABLE_FAIL_CLOSED")
-        if len(pending) >= self.config.max_pending_orders:
+        if self.config.max_pending_orders > 0 and len(pending) >= self.config.max_pending_orders:
             raise RuntimeError("MAX_PENDING_ORDERS_REACHED")
-
     def cycle(self) -> dict[str, Any]:
         self.market.connect()
         account = self.market.account()
@@ -474,16 +410,11 @@ class GSISUnifiedEngine:
                             except Exception as exc:
                                 execution_block = f"{type(exc).__name__}: {exc}"
                                 decision = "WAIT"
-                snapshot = {
-                    "timestamp": datetime.now(timezone.utc).isoformat(), "symbol": symbol, "timeframe": timeframe,
-                    "tick": tick, "flow": flow, "intelligence": intelligence, "cme": cme,
-                    "fused_score": fused_score, "decision": decision, "execution": execution, "execution_block": execution_block,
-                }
+                snapshot = {"timestamp": datetime.now(timezone.utc).isoformat(), "symbol": symbol, "timeframe": timeframe, "tick": tick, "flow": flow, "intelligence": intelligence, "cme": cme, "fused_score": fused_score, "decision": decision, "execution": execution, "execution_block": execution_block}
                 self.persistence.record(symbol, "COMPLETE", snapshot)
                 timeframes[timeframe] = snapshot
             results[symbol] = timeframes
         return {"engine": self.name, "timestamp": datetime.now(timezone.utc).isoformat(), "status": "CYCLE_COMPLETE", "results": results}
-
     @staticmethod
     def _last_bar_id(rates: Any) -> str:
         row = list(rates)[-1]
@@ -493,7 +424,6 @@ class GSISUnifiedEngine:
             except Exception:
                 pass
         return str(row)
-
     def run_forever(self) -> None:
         self.validate_runtime()
         while True:
@@ -505,5 +435,4 @@ class GSISUnifiedEngine:
                 error = {"timestamp": datetime.now(timezone.utc).isoformat(), "status": "CYCLE_ERROR", "error": f"{type(exc).__name__}: {exc}", "traceback": traceback.format_exc(), "cme_error": self.cme_error}
                 self.persistence.record("SYSTEM", "ERROR", error)
                 print(json.dumps(error))
-            delay = max(self.config.loop_interval_seconds - (time.monotonic() - started), 0.0)
-            time.sleep(delay)
+            time.sleep(max(self.config.loop_interval_seconds - (time.monotonic() - started), 0.0))
