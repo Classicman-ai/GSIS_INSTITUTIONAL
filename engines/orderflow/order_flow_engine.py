@@ -1,53 +1,15 @@
-from datetime import datetime, timezone
+"""Compatibility facade for the canonical GSIS order-flow engine."""
+
+from institutional.unified_engine import UnifiedOrderFlowEngine
 
 
-class OrderFlowEngine:
-
+class OrderFlowEngine(UnifiedOrderFlowEngine):
+    """All order-flow calculations are delegated to the canonical engine."""
 
     def run(self, context):
-
-        symbol = context.symbol
-
-
-        buy_volume = 9000
-        sell_volume = 6000
-
-        delta = (
-            buy_volume - sell_volume
-        ) / (
-            buy_volume + sell_volume
-        )
-
-
-        return {
-
-            "engine":
-            "GSIS ORDER FLOW ENGINE",
-
-            "version":
-            "3.0",
-
-            "symbol":
-            symbol,
-
-            "timestamp":
-            datetime.now(timezone.utc).isoformat(),
-
-            "buy_volume":
-            buy_volume,
-
-            "sell_volume":
-            sell_volume,
-
-            "delta":
-            round(delta,2),
-
-            "flow_bias":
-            "BUY_PRESSURE",
-
-            "absorption":
-            False,
-
-            "status":
-            "ORDER_FLOW_COMPLETE"
-        }
+        rates = getattr(context, "rates", None)
+        if rates is None and isinstance(context, dict):
+            rates = context.get("rates")
+        if rates is None:
+            raise RuntimeError("Broker rates are required; order-flow cannot use synthetic data")
+        return self.calculate(rates)
