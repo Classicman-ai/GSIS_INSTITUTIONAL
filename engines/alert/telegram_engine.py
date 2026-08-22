@@ -1,283 +1,98 @@
-# ==========================================
-# GSIS TELEGRAM ALERT ENGINE v7.0
-# LIVE EVENT LISTENER PROTOCOL
-# DUPLICATE LOCK ENABLED
-# ==========================================
+"""GSIS Telegram event delivery.
+
+Credentials and paths are runtime configuration; no market data or secrets are
+stored in source code.
+"""
 
 import json
 import os
-import time
-import requests
-
 from datetime import datetime, timezone
 
-
-BOT_TOKEN = "8715463057:AAHkVFolhP5oMIMkbcoYhHxwhNZ9J_NyVfs"
-CHAT_ID = "8451554539"
+import requests
 
 
-EVENT_FILE = "data/history/trade_events.json"
-DELIVERY_FILE = "data/transparency/telegram_delivery.json"
-MEMORY_FILE = "data/transparency/telegram_memory.json"
-
-
-print("==============================")
-print("GSIS TELEGRAM ALERT ENGINE v7.0")
-print("LIVE EVENT LISTENER MODE")
-print("==============================")
+BOT_TOKEN = os.environ["GSIS_TELEGRAM_BOT_TOKEN"]
+CHAT_ID = os.environ["GSIS_TELEGRAM_CHAT_ID"]
+EVENT_FILE = os.environ["GSIS_TELEGRAM_EVENT_FILE"]
+DELIVERY_FILE = os.environ["GSIS_TELEGRAM_DELIVERY_FILE"]
+MEMORY_FILE = os.environ["GSIS_TELEGRAM_MEMORY_FILE"]
 
 
 def load_json(path):
-
     if not os.path.exists(path):
         return []
-
-    try:
-
-        with open(path,"r") as f:
-            return json.load(f)
-
-    except:
-
-        return []
+    with open(path, "r", encoding="utf-8") as handle:
+        return json.load(handle)
 
 
-
-def save_json(path,data):
-
-    with open(path,"w") as f:
-        json.dump(data,f,indent=4)
-
+def save_json(path, data):
+    parent = os.path.dirname(path)
+    if parent:
+        os.makedirs(parent, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as handle:
+        json.dump(data, handle, indent=2)
 
 
 def send_telegram(message):
-
-    url = (
-        f"https://api.telegram.org/"
-        f"bot{BOT_TOKEN}/sendMessage"
-    )
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    response = requests.post(url, data={"chat_id": CHAT_ID, "text": message}, timeout=float(os.environ["GSIS_TELEGRAM_TIMEOUT_SECONDS"]))
+    return response.json()
 
 
-    payload = {
-
-        "chat_id": CHAT_ID,
-        "text": message
-
-    }
-
-
-    try:
-
-        response = requests.post(
-            url,
-            data=payload,
-            timeout=10
-        )
-
-        return response.json()
-
-
-    except Exception as e:
-
-        return {
-            "error":str(e)
-        }
-
-
-
-def event_key(trade_id,event):
-
+def event_key(trade_id, event):
     return f"{trade_id}_{event}"
 
 
+def already_sent(trade_id, event):
+    return event_key(trade_id, event) in load_json(MEMORY_FILE)
 
-def already_sent(trade_id,event):
 
+def save_memory(trade_id, event):
     memory = load_json(MEMORY_FILE)
-
-
-    key = event_key(
-        trade_id,
-        event
-    )
-
-
-    return key in memory
-
-
-
-def save_memory(trade_id,event):
-
-    memory = load_json(MEMORY_FILE)
-
-
-    key = event_key(
-        trade_id,
-        event
-    )
-
-
+    key = event_key(trade_id, event)
     if key not in memory:
-
         memory.append(key)
-
-
-    save_json(
-        MEMORY_FILE,
-        memory
-    )
-
+    save_json(MEMORY_FILE, memory)
 
 
 def save_delivery(record):
-
-    data = load_json(
-        DELIVERY_FILE
-    )
-
-
-    if not isinstance(data,list):
-
-        data=[]
-
-
+    data = load_json(DELIVERY_FILE)
+    if not isinstance(data, list):
+        data = []
     data.append(record)
-
-
-    save_json(
-        DELIVERY_FILE,
-        data
-    )
-
+    save_json(DELIVERY_FILE, data)
 
 
 def process_event(event):
-
-
-    trade_id = event.get(
-        "trade_id"
-    )
-
-
-    name = event.get(
-        "event"
-    )
-
-
-    symbol = event.get(
-        "symbol"
-    )
-
-
-    if not trade_id or not name:
-
+    trade_id = event.get("trade_id")
+    name = event.get("event")
+    symbol = event.get("symbol")
+    if not trade_id or not name or already_sent(trade_id, name):
         return
-
-
-
-    if already_sent(
-        trade_id,
-        name
-    ):
-
-        return
-
-
 
     message = (
-
-        "🛡️ GSIS TRADE UPDATE\n\n"
-
+        "GSIS TRADE UPDATE\n\n"
         f"Symbol: {symbol}\n"
-
         f"Trade ID: {trade_id}\n"
-
         f"Event: {name}\n\n"
-
-        f"Time: "
-        f"{datetime.now(timezone.utc).isoformat()}"
-
+        f"Time: {datetime.now(timezone.utc).isoformat()}"
     )
-
-
-    result = send_telegram(
-        message
-    )
-
-
+    result = send_telegram(message)
     if result.get("ok"):
-
-
-        record = {
-
-            "trade_id":trade_id,
-
-            "event":name,
-
-            "telegram_status":
-            "DELIVERED",
-
-            "message_id":
-            result["result"]["message_id"],
-
-            "timestamp":
-            datetime.now(timezone.utc).isoformat()
-
-        }
-
-
-        save_delivery(
-            record
-        )
-
-
-        save_memory(
-            trade_id,
-            name
-        )
-
-
-        print(record)
-
-
-    else:
-
-        print({
-
-            "event":name,
-
-            "status":"FAILED",
-
-            "response":result
-
+        save_delivery({
+            "trade_id": trade_id,
+            "event": name,
+            "telegram_status": "DELIVERED",
+            "message_id": result["result"]["message_id"],
+            "timestamp": datetime.now(timezone.utc).isoformat(),
         })
-
+        save_memory(trade_id, name)
 
 
 def run():
-
-
-    events = load_json(
-        EVENT_FILE
-    )
-
-
-    if not events:
-
-        print("NO NEW EVENTS")
-
-        return
-
-
-
-    for event in events:
-
-        process_event(
-            event
-        )
-
+    for event in load_json(EVENT_FILE):
+        process_event(event)
 
 
 if __name__ == "__main__":
-
     run()
