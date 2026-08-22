@@ -1,0 +1,3 @@
+# External CME/COMEX market-data provider
+# Official Python client used by adapters/cme/databento_live.py
+databento>=0.65.0
