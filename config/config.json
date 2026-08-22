@@ -1,31 +1,16 @@
 {
-    "system_name": "GSIS Institutional",
-    "version": "1.0",
-    "mode": "development",
-
-    "symbols": [
-        "BTCUSDT"
-    ],
-
-    "timeframes": [
-        "M1",
-        "M5",
-        "M15",
-        "M30",
-        "H1",
-        "H4",
-        "D1"
-    ],
-
-    "database": "database/qmos.db",
-
-    "risk_per_trade": 0.005,
-
-    "enable_ai": false,
-
-    "enable_backtesting": false,
-
-    "enable_news_engine": false,
-
-    "enable_execution": false
+  "runtime_configuration": "environment",
+  "required_environment": [
+    "GSIS_MT5_CONNECTOR_PATH",
+    "GSIS_SYMBOLS",
+    "GSIS_TIMEFRAMES",
+    "GSIS_LOOP_INTERVAL_SECONDS",
+    "GSIS_HISTORY_COUNT",
+    "GSIS_RISK_PER_TRADE",
+    "GSIS_ATR_MULTIPLIER",
+    "GSIS_REWARD_MULTIPLE",
+    "GSIS_MINIMUM_SIGNAL_SCORE",
+    "GSIS_EXECUTION_ENABLED",
+    "GSIS_DATABASE_PATH"
+  ]
 }
