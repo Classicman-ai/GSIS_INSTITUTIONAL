@@ -1,24 +1,11 @@
-# Assets monitored by QMOS
-ASSETS = [
-    "XAUTUSDT",
-    "BTCUSDT",
-    "ETHUSDT"
-]
+"""Compatibility access to canonical GSIS runtime configuration.
 
-# Binance candle intervals
-TIMEFRAMES = {
-    "M1": "1m",
-    "M5": "5m",
-    "M15": "15m",
-    "H1": "1h",
-    "H4": "4h",
-    "D1": "1d",
-    "W1": "1w",
-    "MN1": "1M"
-}
+Runtime values are intentionally loaded from the environment; this module
+contains no market symbols, prices, timeframes, risk values, or test data.
+"""
 
-# Database
-DATABASE = "database/qmos.db"
+from institutional.unified_engine import GSISConfig
 
-# Number of historical candles to fetch
-HISTORY_LIMIT = 500
+
+def load_config() -> GSISConfig:
+    return GSISConfig.from_env()
