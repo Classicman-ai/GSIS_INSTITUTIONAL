@@ -11,11 +11,11 @@ from datetime import datetime, timezone
 import requests
 
 
-BOT_TOKEN = os.environ["GSIS_TELEGRAM_BOT_TOKEN"]
-CHAT_ID = os.environ["GSIS_TELEGRAM_CHAT_ID"]
-EVENT_FILE = os.environ["GSIS_TELEGRAM_EVENT_FILE"]
-DELIVERY_FILE = os.environ["GSIS_TELEGRAM_DELIVERY_FILE"]
-MEMORY_FILE = os.environ["GSIS_TELEGRAM_MEMORY_FILE"]
+def required(name):
+    value = os.environ.get(name, "").strip()
+    if not value:
+        raise RuntimeError(f"Missing Telegram runtime configuration: {name}")
+    return value
 
 
 def load_json(path):
@@ -34,8 +34,11 @@ def save_json(path, data):
 
 
 def send_telegram(message):
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-    response = requests.post(url, data={"chat_id": CHAT_ID, "text": message}, timeout=float(os.environ["GSIS_TELEGRAM_TIMEOUT_SECONDS"]))
+    token = required("GSIS_TELEGRAM_BOT_TOKEN")
+    chat_id = required("GSIS_TELEGRAM_CHAT_ID")
+    timeout = float(required("GSIS_TELEGRAM_TIMEOUT_SECONDS"))
+    url = f"https://api.telegram.org/bot{token}/sendMessage"
+    response = requests.post(url, data={"chat_id": chat_id, "text": message}, timeout=timeout)
     return response.json()
 
 
@@ -43,31 +46,34 @@ def event_key(trade_id, event):
     return f"{trade_id}_{event}"
 
 
-def already_sent(trade_id, event):
-    return event_key(trade_id, event) in load_json(MEMORY_FILE)
+def already_sent(trade_id, event, memory_file):
+    return event_key(trade_id, event) in load_json(memory_file)
 
 
-def save_memory(trade_id, event):
-    memory = load_json(MEMORY_FILE)
+def save_memory(trade_id, event, memory_file):
+    memory = load_json(memory_file)
     key = event_key(trade_id, event)
     if key not in memory:
         memory.append(key)
-    save_json(MEMORY_FILE, memory)
+    save_json(memory_file, memory)
 
 
-def save_delivery(record):
-    data = load_json(DELIVERY_FILE)
+def save_delivery(record, delivery_file):
+    data = load_json(delivery_file)
     if not isinstance(data, list):
         data = []
     data.append(record)
-    save_json(DELIVERY_FILE, data)
+    save_json(delivery_file, data)
 
 
 def process_event(event):
+    event_file = required("GSIS_TELEGRAM_EVENT_FILE")
+    delivery_file = required("GSIS_TELEGRAM_DELIVERY_FILE")
+    memory_file = required("GSIS_TELEGRAM_MEMORY_FILE")
     trade_id = event.get("trade_id")
     name = event.get("event")
     symbol = event.get("symbol")
-    if not trade_id or not name or already_sent(trade_id, name):
+    if not trade_id or not name or already_sent(trade_id, name, memory_file):
         return
 
     message = (
@@ -79,18 +85,22 @@ def process_event(event):
     )
     result = send_telegram(message)
     if result.get("ok"):
-        save_delivery({
-            "trade_id": trade_id,
-            "event": name,
-            "telegram_status": "DELIVERED",
-            "message_id": result["result"]["message_id"],
-            "timestamp": datetime.now(timezone.utc).isoformat(),
-        })
-        save_memory(trade_id, name)
+        save_delivery(
+            {
+                "trade_id": trade_id,
+                "event": name,
+                "telegram_status": "DELIVERED",
+                "message_id": result["result"]["message_id"],
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+            },
+            delivery_file,
+        )
+        save_memory(trade_id, name, memory_file)
 
 
 def run():
-    for event in load_json(EVENT_FILE):
+    event_file = required("GSIS_TELEGRAM_EVENT_FILE")
+    for event in load_json(event_file):
         process_event(event)
 
 
