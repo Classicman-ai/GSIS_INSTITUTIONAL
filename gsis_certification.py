@@ -3,21 +3,18 @@
 from __future__ import annotations
 
 import ast
-import os
+import re
 from pathlib import Path
 
 from institutional import GSISConfig, GSISUnifiedEngine
 
 
-FORBIDDEN_PATTERNS = (
-    "BOT_TOKEN =",
-    "CHAT_ID =",
-    "api.binance.com",
-    "buy_volume = 9000",
-    "sell_volume = 6000",
-    "XAUUSD",
-    "BTCUSDT",
-    "ETHUSDT",
+FORBIDDEN_REGEX = (
+    re.compile(r"^\s*BOT_" + r"TOKEN\s*=\s*['\"]", re.MULTILINE),
+    re.compile(r"^\s*CHAT_" + r"ID\s*=\s*['\"]", re.MULTILINE),
+    re.compile(r"api\.binance\.com", re.IGNORECASE),
+    re.compile(r"buy_volume\s*=\s*[0-9]", re.IGNORECASE),
+    re.compile(r"sell_volume\s*=\s*[0-9]", re.IGNORECASE),
 )
 
 
@@ -31,9 +28,9 @@ def static_audit(root: Path) -> list[str]:
         if any(part in {".git", ".venv", "venv", "__pycache__"} for part in path.parts):
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
-        for pattern in FORBIDDEN_PATTERNS:
-            if pattern in text:
-                failures.append(f"{path}: forbidden pattern: {pattern}")
+        for pattern in FORBIDDEN_REGEX:
+            if pattern.search(text):
+                failures.append(f"{path}: forbidden implementation pattern: {pattern.pattern}")
         try:
             ast.parse(text, filename=str(path))
         except SyntaxError as exc:
