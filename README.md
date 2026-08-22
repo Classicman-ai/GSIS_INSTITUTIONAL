@@ -44,7 +44,7 @@ Category B is disabled unless the external CME and MT5 prices demonstrate a vali
 
 ## External CME data
 
-GSIS currently provides a Databento adapter for CME Globex data. Databento documents MBO as L3/full order-book data, MBP-10 as L2 top-ten market depth, and trades as tick-by-tick executions. citeturn1search1turn0search1
+GSIS provides a Databento adapter for CME Globex data. The adapter consumes externally configured `mbo`, `mbp-10`, and `trades` schemas and forwards normalized records into GSIS.
 
 Configure the provider through `.env` variables from `.env.example`. No CME market data is hardcoded in the production intelligence engines.
 
@@ -54,7 +54,7 @@ Install the optional provider dependency:
 pip install -r requirements-cme.txt
 ```
 
-The adapter subscribes to externally configured `mbo`, `mbp-10`, and `trades` schemas and forwards normalized records into GSIS. Databento's live API supports multiple schemas in one session and MBO snapshots for initial book state. citeturn0search0turn0search8
+The adapter supports external MBO snapshots for initial book state and live streaming/reconnection through the provider client.
 
 ## Start
 
