@@ -1,39 +1,45 @@
-"""GSIS risk compatibility view.
+"""Compatibility view of the canonical GSIS runtime risk configuration.
 
-The live runtime is the sole authority for risk. These values mirror the
-same environment variables consumed by institutional.unified_engine and do
-not contain a second hard-coded risk policy.
+No independent risk values are defined here. The environment is the single
+source of truth used by institutional.unified_engine.
 """
 
 import os
 
 
-def _float(name: str, default: str) -> float:
-    return float(os.getenv(name, default))
+def _required_float(name: str) -> float:
+    value = os.getenv(name, "").strip()
+    if not value:
+        raise RuntimeError(f"Missing canonical runtime risk configuration: {name}")
+    return float(value)
 
 
-def _int(name: str, default: str) -> int:
-    return int(os.getenv(name, default))
+def _required_int(name: str) -> int:
+    value = os.getenv(name, "").strip()
+    if not value:
+        raise RuntimeError(f"Missing canonical runtime risk configuration: {name}")
+    return int(value)
 
 
-def _bool(name: str, default: str) -> bool:
-    return os.getenv(name, default).strip().lower() == "true"
+def _required_bool(name: str) -> bool:
+    value = os.getenv(name, "").strip().lower()
+    if value not in {"true", "false"}:
+        raise RuntimeError(f"Missing/invalid canonical runtime risk configuration: {name}")
+    return value == "true"
 
 
 TRADING_MODE = os.getenv("GSIS_TRADING_MODE", "SWING")
-MAX_RISK_PER_TRADE = _float("GSIS_RISK_PER_TRADE", "0.01")
-MIN_RISK_REWARD = _float("GSIS_MIN_RISK_REWARD", "2")
-MAX_RISK_REWARD = _float("GSIS_MAX_RISK_REWARD", "10")
-
+MAX_RISK_PER_TRADE = _required_float("GSIS_RISK_PER_TRADE")
+MIN_RISK_REWARD = _required_float("GSIS_MIN_RISK_REWARD")
+MAX_RISK_REWARD = _required_float("GSIS_MAX_RISK_REWARD")
 TP_LEVELS = {
-    "TP1": {"rr": _float("GSIS_TP1_RR", "2"), "close_percent": _float("GSIS_TP1_CLOSE_PERCENT", "30")},
-    "TP2": {"rr": _float("GSIS_TP2_RR", "5"), "close_percent": _float("GSIS_TP2_CLOSE_PERCENT", "30")},
-    "TP3": {"rr": _float("GSIS_TP3_RR", "8"), "close_percent": _float("GSIS_TP3_CLOSE_PERCENT", "25")},
-    "TP4": {"rr": _float("GSIS_TP4_RR", "10"), "close_percent": _float("GSIS_TP4_CLOSE_PERCENT", "15")},
+    "TP1": {"rr": _required_float("GSIS_TP1_RR"), "close_percent": _required_float("GSIS_TP1_CLOSE_PERCENT")},
+    "TP2": {"rr": _required_float("GSIS_TP2_RR"), "close_percent": _required_float("GSIS_TP2_CLOSE_PERCENT")},
+    "TP3": {"rr": _required_float("GSIS_TP3_RR"), "close_percent": _required_float("GSIS_TP3_CLOSE_PERCENT")},
+    "TP4": {"rr": _required_float("GSIS_TP4_RR"), "close_percent": _required_float("GSIS_TP4_CLOSE_PERCENT")},
 }
-
 MOVE_TO_BREAK_EVEN_AFTER = os.getenv("GSIS_BREAK_EVEN_AFTER", "TP1")
-ENABLE_TRAILING_STOP = _bool("GSIS_ENABLE_TRAILING_STOP", "true")
-MAX_OPEN_TRADES = _int("GSIS_MAX_OPEN_TRADES", "3")
-ALLOW_PARTIAL_CLOSE = _bool("GSIS_ALLOW_PARTIAL_CLOSE", "true")
-ALLOW_MULTIPLE_POSITIONS = _bool("GSIS_ALLOW_MULTIPLE_POSITIONS", "false")
+ENABLE_TRAILING_STOP = _required_bool("GSIS_ENABLE_TRAILING_STOP")
+MAX_OPEN_TRADES = _required_int("GSIS_MAX_OPEN_TRADES")
+ALLOW_PARTIAL_CLOSE = _required_bool("GSIS_ALLOW_PARTIAL_CLOSE")
+ALLOW_MULTIPLE_POSITIONS = _required_bool("GSIS_ALLOW_MULTIPLE_POSITIONS")
