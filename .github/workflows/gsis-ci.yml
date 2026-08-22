@@ -19,6 +19,6 @@ jobs:
       - name: Compile Python sources
         run: python -m compileall -q .
       - name: Run canonical and deterministic integration tests
-        run: pytest -q tests/test_canonical_trading_path.py tests/test_end_to_end_wiring.py
+        run: pytest -q tests/test_canonical_trading_path.py tests/test_canonical_notification_bus.py tests/test_end_to_end_wiring.py
       - name: Run static GSIS certification
         run: python gsis_certification.py
